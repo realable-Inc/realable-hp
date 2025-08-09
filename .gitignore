@@ -44,3 +44,5 @@ next-env.d.ts
 .serena/
 *.serena.cache
 .serena-memory/
+
+.CLAUDE.md

@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# 主要なページ
+Allow: /
+Allow: /services
+Allow: /projects
+Allow: /company
+Allow: /contact
+
+# サイトマップの場所
+Sitemap: https://realable.tokyo/sitemap.xml
+
+# クローリング頻度の調整
+Crawl-delay: 1
+
+# 特定のボットに対する設定
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# 検索エンジンが除外すべきファイル
+Disallow: /_next/
+Disallow: /api/
+Disallow: /*.json$
