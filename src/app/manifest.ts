@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'リアラブル株式会社 - AI×不動産テック',
@@ -9,18 +11,7 @@ export default function manifest(): MetadataRoute.Manifest {
     display: 'standalone',
     background_color: '#ffffff',
     theme_color: '#00C896',
-    icons: [
-      {
-        src: '/favicon-192.png',
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        src: '/favicon-512.png',
-        sizes: '512x512',
-        type: 'image/png',
-      },
-    ],
+    icons: [],
     categories: ['business', 'finance', 'productivity'],
     lang: 'ja',
     dir: 'ltr',

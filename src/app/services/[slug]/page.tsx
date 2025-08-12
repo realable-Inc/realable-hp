@@ -133,13 +133,14 @@ export function generateStaticParams() {
 }
 
 interface ServiceDetailPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function ServiceDetailPage({ params }: ServiceDetailPageProps) {
-  const service = serviceDetails[params.slug as keyof typeof serviceDetails];
+export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
+  const { slug } = await params;
+  const service = serviceDetails[slug as keyof typeof serviceDetails];
 
   if (!service) {
     notFound();

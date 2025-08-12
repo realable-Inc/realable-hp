@@ -5,7 +5,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 
 interface ProjectCardProps {
-  id: string;
   title: string;
   challenge: string;
   solution: string;
@@ -13,7 +12,7 @@ interface ProjectCardProps {
   image: string;
 }
 
-export default function ProjectCard({ id, title, challenge, solution, category, image }: ProjectCardProps) {
+export default function ProjectCard({ title, challenge, solution, category, image }: ProjectCardProps) {
   const [showSolution, setShowSolution] = useState(false);
 
   return (

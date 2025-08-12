@@ -10,7 +10,9 @@ import { Select } from '@/components/ui/select';
 
 declare global {
   interface Window {
-    grecaptcha: any;
+    grecaptcha: {
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
   }
 }
 

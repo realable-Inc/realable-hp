@@ -3,6 +3,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructuredData";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -62,107 +63,14 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#00C896" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Corporation",
-              "name": "リアラブル株式会社",
-              "alternateName": "Realable Inc.",
-              "url": "https://realable.tokyo",
-              "logo": "https://realable.tokyo/logo.png",
-              "description": "AI技術と不動産専門知識を融合し、業界のDXを推進するリアラブル株式会社",
-              "foundingDate": "2024",
-              "foundingLocation": {
-                "@type": "Place",
-                "name": "東京都",
-                "addressCountry": "JP"
-              },
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "東京都",
-                "addressCountry": "JP"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "email": "info@realable.jp",
-                "contactType": "customer service",
-                "availableLanguage": "Japanese"
-              },
-              "sameAs": [],
-              "knowsAbout": [
-                "不動産テック",
-                "AI技術",
-                "機械学習",
-                "データサイエンス",
-                "不動産投資",
-                "PropTech",
-                "DXコンサルティング"
-              ],
-              "founder": [
-                {
-                  "@type": "Person",
-                  "name": "肥川成希",
-                  "alumniOf": {
-                    "@type": "CollegeOrUniversity",
-                    "name": "東京大学経済学部"
-                  },
-                  "jobTitle": "CEO/CFO"
-                },
-                {
-                  "@type": "Person", 
-                  "name": "齊藤巧",
-                  "alumniOf": {
-                    "@type": "CollegeOrUniversity",
-                    "name": "東京大学大学院工学系研究科"
-                  },
-                  "jobTitle": "CTO"
-                }
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "AI不動産ソリューション",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Hakoma - AIマッチングプラットフォーム",
-                      "description": "AIによる不動産投資マッチングサービス"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "不動産価格予測モデル",
-                      "description": "AI技術による不動産価格予測システム"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "マイソクOCR",
-                      "description": "OCR技術による不動産文書自動処理"
-                    }
-                  }
-                ]
-              }
-            })
-          }}
-        />
       </head>
       <body
         className={`${notoSansJP.variable} font-sans antialiased`}
       >
+        <StructuredData />
         <Navigation />
         <main className="pt-16 min-h-screen">
           {children}
