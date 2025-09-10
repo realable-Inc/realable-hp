@@ -103,15 +103,11 @@ export default function ServicesSection() {
                 
                 <div className="space-y-6 text-slate-700 leading-relaxed">
                   <p>
-                    <span className="font-semibold text-emerald-700">退去者</span>はオフィスの写真や詳細情報を<span className="text-emerald-600 font-medium">フリーマーケット感覚で簡単に掲載でき</span>、<span className="font-semibold text-blue-700">入居希望者</span>はこれらのリスティングから<span className="text-blue-600 font-medium">直接退去者とチャット上で造作物や設備の売却交渉を進めることが可能です</span>。
+                    <span className="font-semibold text-orange-500">退去者</span>はオフィスの写真や詳細情報をフリーマーケット感覚で簡単に掲載でき、<span className="font-semibold text-orange-500">入居希望者</span>はこれらのリスティングから<span className="underline">直接退去者とチャット上で造作物や設備の売却交渉を進めることが可能です</span>。<span className="font-semibold text-orange-500">退去者</span>は原状回復費用を削減するだけでなく売却により次の移転の原資を確保でき、<span className="font-semibold text-orange-500">入居希望者</span>は入居後すぐにビジネスをスタートできます。
                   </p>
                   
                   <p>
-                    <span className="font-semibold text-emerald-700">退去者</span>は<span className="text-emerald-600 font-medium">原状回復費用を削減するだけでなく売却により次の移転の原資を確保でき</span>、<span className="font-semibold text-blue-700">入居希望者</span>は<span className="text-blue-600 font-medium">入居後すぐにビジネスをスタートできます</span>。
-                  </p>
-                  
-                  <p>
-                    <span className="font-semibold text-purple-700">オーナー</span>にとっても、退去者が自ら次の入居者を見つけてきてくれることによって、<span className="text-purple-600 font-medium">費用や空室期間のリスクを軽減することができ、居抜きでの解約を承諾しやすくなります</span>。
+                    <span className="font-semibold text-orange-500">オーナー</span>にとっても、退去者が自ら次の入居者を見つけてきてくれることによって、<span className="underline">費用や空室期間のリスクを軽減することができ、居抜きでの解約を承諾しやすくなります</span>。
                   </p>
                 </div>
               </div>
@@ -119,18 +115,17 @@ export default function ServicesSection() {
 
             {/* CTA */}
             <div className="text-center mt-12">
-              <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-2xl p-8 text-white">
-                <h4 className="text-xl font-bold mb-4">実際のサービス画面をご覧ください</h4>
-                <p className="text-emerald-100 mb-6">LPはこちら</p>
+              <p className="text-slate-700">
+                LPはこちら → 
                 <a 
                   href="https://www.hakoma.tokyo/inuki-taikyo" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-block bg-white text-emerald-600 px-8 py-3 rounded-full font-bold hover:bg-emerald-50 transition-colors"
+                  className="text-emerald-600 hover:text-emerald-700 hover:underline ml-1"
                 >
                   https://www.hakoma.tokyo/inuki-taikyo
                 </a>
-              </div>
+              </p>
             </div>
           </div>
         </div>
