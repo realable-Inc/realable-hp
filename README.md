@@ -48,3 +48,8 @@ realable.tokyoのドメインをsquarespaceで所有しているのでそれを�
 
 reCAPTCHA v3、送信後サンクスページ＋管理者メール通知。
 
+## デプロイ方法
+1. firebase login -reauth
+1. npm run build
+1. npm run deploy
+
