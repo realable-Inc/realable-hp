@@ -7,12 +7,6 @@ export default function ContactSection() {
     <section id="contact" className="py-20 lg:py-28 bg-gradient-to-br from-emerald-50 via-white to-slate-50">
       <div className="container max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            Contact Us
-          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
             お問い合わせ
           </h2>

@@ -114,7 +114,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             placeholder="山田 太郎"
-            className="transition-colors"
+            className="transition-colors focus:!outline-none focus:!ring-0 focus:!ring-offset-0 focus:!shadow-[0_0_0_2px_rgb(16,185,129)]"
           />
         </div>
 
@@ -127,7 +127,7 @@ export default function ContactForm() {
             value={formData.company}
             onChange={handleChange}
             placeholder="株式会社サンプル"
-            className="transition-colors"
+            className="transition-colors focus:!outline-none focus:!ring-0 focus:!ring-offset-0 focus:!shadow-[0_0_0_2px_rgb(16,185,129)]"
           />
         </div>
       </div>
@@ -145,7 +145,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             placeholder="example@email.com"
-            className="transition-colors"
+            className="transition-colors focus:!outline-none focus:!ring-0 focus:!ring-offset-0 focus:!shadow-[0_0_0_2px_rgb(16,185,129)]"
           />
         </div>
 
@@ -158,7 +158,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="03-1234-5678"
-            className="transition-colors"
+            className="transition-colors focus:!outline-none focus:!ring-0 focus:!ring-offset-0 focus:!shadow-[0_0_0_2px_rgb(16,185,129)]"
           />
         </div>
       </div>
@@ -173,6 +173,7 @@ export default function ContactForm() {
           value={formData.subject}
           onChange={handleChange}
           required
+          className="focus:!outline-none focus:!ring-0 focus:!ring-offset-0 focus:!shadow-[0_0_0_2px_rgb(16,185,129)]"
         >
           <option value="">選択してください</option>
           <option value="consultation">開発相談</option>
@@ -194,18 +195,18 @@ export default function ContactForm() {
           required
           rows={6}
           placeholder="お問い合わせの詳細をご記入ください..."
-          className="resize-none transition-colors"
+          className="resize-none transition-colors focus:!outline-none focus:!ring-0 focus:!ring-offset-0 focus:!shadow-[0_0_0_2px_rgb(16,185,129)]"
         />
       </div>
 
-      <div className="rounded-lg bg-muted p-4">
-        <p className="text-xs text-muted-foreground leading-relaxed">
+      <div className="rounded-lg bg-slate-600 p-4">
+        <p className="text-xs text-slate-300 leading-relaxed">
           このサイトはreCAPTCHAによって保護されており、Googleの
           <a 
             href="https://policies.google.com/privacy" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-primary hover:underline ml-1"
+            className="text-teal-400 hover:text-teal-300 hover:underline ml-1"
           >
             プライバシーポリシー
           </a>
@@ -214,7 +215,7 @@ export default function ContactForm() {
             href="https://policies.google.com/terms" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-primary hover:underline ml-1"
+            className="text-teal-400 hover:text-teal-300 hover:underline ml-1"
           >
             利用規約
           </a>
