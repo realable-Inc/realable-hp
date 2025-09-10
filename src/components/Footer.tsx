@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-2xl font-bold mb-4">リアラブル株式会社</h3>
             <p className="text-gray-400 mb-2">
@@ -50,28 +50,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#articles" className="text-gray-400 hover:text-white transition-colors">
-                  読み物
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
                   お問い合わせ
                 </Link>
               </li>
-              <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
-                  お問い合わせフォーム
-                </Link>
-              </li>
             </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-semibold mb-4">お問い合わせ</h4>
-            <p className="text-gray-400">
-              contact@hakoma.tokyo
-            </p>
           </div>
         </div>
         
