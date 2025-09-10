@@ -88,8 +88,6 @@ export default function CompanyDetails() {
         <div className="text-gray-600">
           <span>Contact: </span>
           <a href="mailto:contact@hakoma.tokyo" className="text-orange-500 hover:underline">contact@hakoma.tokyo</a>
-          <span> </span>
-          <a href="#" className="text-orange-500 hover:underline">Privacy policy</a>
         </div>
         <div className="text-sm text-gray-500">
           COPYRIGHT © 2024 リアラブル株式会社. ALL RIGHTS RESERVED.
