@@ -6,9 +6,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">REALABLE</h3>
+            <h3 className="text-2xl font-bold mb-4">リアラブル株式会社</h3>
+            <p className="text-gray-400 mb-2">
+              東京都台東区池之端三丁目３番９号
+            </p>
             <p className="text-gray-400">
-              不動産開発コンサルティング
+              contact@hakoma.tokyo
             </p>
           </div>
           
@@ -16,34 +19,39 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">サービス</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/services#consulting" className="text-gray-400 hover:text-white transition-colors">
-                  開発コンサルティング
+                <Link href="/projects" className="text-gray-400 hover:text-white transition-colors">
+                  ソリューション実績
                 </Link>
               </li>
               <li>
-                <Link href="/services#project-management" className="text-gray-400 hover:text-white transition-colors">
-                  プロジェクトマネジメント
-                </Link>
-              </li>
-              <li>
-                <Link href="/services#market-research" className="text-gray-400 hover:text-white transition-colors">
-                  市場調査・分析
+                <Link href="/services" className="text-gray-400 hover:text-white transition-colors">
+                  コンシューマー向け不動産サービス
                 </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">会社情報</h4>
+            <h4 className="text-lg font-semibold mb-4">サイトマップ</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/company" className="text-gray-400 hover:text-white transition-colors">
-                  会社概要
+                <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+                  トップページ
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="text-gray-400 hover:text-white transition-colors">
-                  実績紹介
+                <Link href="/#about" className="text-gray-400 hover:text-white transition-colors">
+                  ハコマとは
+                </Link>
+              </li>
+              <li>
+                <Link href="/company" className="text-gray-400 hover:text-white transition-colors">
+                  会社情報
+                </Link>
+              </li>
+              <li>
+                <Link href="/#articles" className="text-gray-400 hover:text-white transition-colors">
+                  読み物
                 </Link>
               </li>
               <li>
@@ -51,26 +59,25 @@ export default function Footer() {
                   お問い合わせ
                 </Link>
               </li>
+              <li>
+                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
+                  お問い合わせフォーム
+                </Link>
+              </li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-lg font-semibold mb-4">お問い合わせ</h4>
-            <p className="text-gray-400 mb-2">
-              東京都港区虎ノ門
-            </p>
-            <p className="text-gray-400 mb-2">
-              TEL: 03-XXXX-XXXX
-            </p>
             <p className="text-gray-400">
-              Email: info@realable.tokyo
+              contact@hakoma.tokyo
             </p>
           </div>
         </div>
         
         <div className="mt-8 pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-400">
-            © 2024 Realable. All rights reserved.
+            © 2024 リアラブル株式会社. All rights reserved.
           </p>
         </div>
       </div>

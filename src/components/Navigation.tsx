@@ -8,7 +8,7 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { href: '/services', label: 'サービス' },
+    { href: '/services', label: 'コンシューマー向け不動産サービス' },
     { href: '/projects', label: 'ソリューション実績' },
     { href: '/company', label: '会社概要' },
     { href: '/contact', label: 'お問い合わせ' },
