@@ -20,7 +20,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/projects" className="text-gray-400 hover:text-white transition-colors">
-                  ソリューション実績
+                  プロジェクト一覧
                 </Link>
               </li>
               <li>

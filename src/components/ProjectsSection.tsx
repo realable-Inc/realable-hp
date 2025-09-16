@@ -43,7 +43,7 @@ export default function ProjectsSection() {
       <div className="container max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
-            サービス事例
+            プロジェクト事例
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
             AI技術を活用した革新的な不動産サービスをご紹介します
@@ -57,9 +57,9 @@ export default function ProjectsSection() {
         </div>
         
         <div className="text-center mt-12">
-          <Link href="/projects">
+          <Link href="/services">
             <button className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl">
-              すべてのソリューション実績を見る
+              全ての自社サービスを見る
               <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

@@ -6,7 +6,7 @@ export default function ServicesSection() {
       <div className="container max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
-            居抜きマッチングサービス
+            サービス一覧
           </h2>
           <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
             リアラブルは、居抜きオフィスのマッチングを目的としたWebサービス「ハコマ」を運営しています。<br />

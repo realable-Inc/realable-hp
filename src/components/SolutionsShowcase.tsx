@@ -44,7 +44,7 @@ export default function SolutionsShowcase() {
         <div className="container max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-              ソリューション実績
+              プロジェクト一覧
             </h1>
             <p className="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
               AI技術を活用した革新的な不動産ソリューションの実績をご紹介します。<br />
