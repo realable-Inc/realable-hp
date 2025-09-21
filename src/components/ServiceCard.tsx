@@ -6,6 +6,7 @@ export interface Service {
   id: string;
   title: string;
   description: string;
+  backgroundImage?: string;
 }
 
 interface ServiceCardProps {
@@ -15,8 +16,16 @@ interface ServiceCardProps {
 export default function ServiceCard({ service }: ServiceCardProps) {
   return (
     <Link href={`/services/${service.id}`} className="h-full">
-      <div className="group bg-white rounded-xl shadow-md hover:shadow-xl border border-slate-200 overflow-hidden transition-all duration-300 hover:scale-[1.02] cursor-pointer h-full flex flex-col">
-        <div className="p-8 flex-1 flex flex-col">
+      <div className="group relative bg-white rounded-xl shadow-md hover:shadow-xl border border-slate-200 overflow-hidden transition-all duration-300 hover:scale-[1.02] cursor-pointer h-full flex flex-col">
+        {/* Background image with overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{
+            backgroundImage: `url('${service.backgroundImage || 'https://picsum.photos/800/600?random=' + service.id}')`
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent" />
+        <div className="relative p-8 flex-1 flex flex-col z-10">
           <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
           
           <p className="text-slate-600 leading-relaxed mb-6 flex-1">
