@@ -82,6 +82,7 @@ export default function CompanyDetails() {
         </div>
       </div>
 
+
       {/* Footer */}
       <div className="mt-16 text-center space-y-4 pb-8">
         <div className="text-2xl font-bold text-gray-800">リアラブル株式会社</div>
