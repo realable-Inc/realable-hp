@@ -132,7 +132,28 @@ npm run build
 ```
 
 ## デプロイ方法
-1. firebase login -reauth
-1. npm run build
-1. npm run deploy
+
+### 環境変数設定
+`.env`ファイルに必要な環境変数を設定：
+```bash
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_recaptcha_site_key
+RESEND_API_KEY=your_resend_api_key
+```
+
+### デプロイコマンド
+```bash
+# 環境変数チェック付きビルド・デプロイ
+npm run deploy
+```
+
+デプロイスクリプトは以下の処理を自動実行します：
+- 環境変数の確認（未設定時は対話的入力）
+- プロダクションビルド
+- Firebase Hostingへのデプロイ
+
+### 利用可能なコマンド
+- `npm run dev` - 開発サーバー起動
+- `npm run build` - プロダクションビルド
+- `npm run deploy` - 環境変数チェック付きビルド・デプロイ
+- `npm run lint` - ESLintチェック
 

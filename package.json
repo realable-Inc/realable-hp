@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "firebase deploy --only hosting"
+    "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
     "biome": "^0.2.2",
