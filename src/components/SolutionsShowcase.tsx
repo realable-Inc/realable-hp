@@ -1,39 +1,9 @@
 'use client';
 
 import ServiceCard, { Service } from './ServiceCard';
+import { getServiceSummaries } from '@/data/services';
 
-const solutions: Service[] = [
-  {
-    id: 'ai-matching',
-    title: 'オーダー×物件 AIマッチング',
-    description: 'AIが担当者の手打ちメモも理解して最適にマッチング。提案すべき物件を通知し、営業の機会損失を最小化。'
-  },
-  {
-    id: 'price-prediction',
-    title: '不動産価格予測モデル',
-    description: 'AIが過去事例から学習し適正価格を算出。価格影響要素を数値化・可視化することで根拠のある価格設定が可能。'
-  },
-  {
-    id: 'ocr-system',
-    title: 'マイソクOCR',
-    description: 'どんなレイアウトでも対応可能なOCR技術で、REINSからの大量PDFを一括データ化。システムやエクセルに即座に取り込み。'
-  },
-  {
-    id: 'sales-analysis',
-    title: '営業トークの見える化',
-    description: 'Speech2text AIで営業トークを自動テキスト化・分析。最適な営業トークを見える化し、オーダー情報を自動抽出。'
-  },
-  {
-    id: 'reins-csv',
-    title: 'REINS CSV化ツール',
-    description: 'ワンクリックで最大50件の物件データをCSV出力。整理されたフォーマットで手作業時間を大幅削減。'
-  },
-  {
-    id: 'ai-chatbot',
-    title: '社内版AIチャットボット（RAG）',
-    description: 'RAG技術で社内情報をAIに記憶。「xxへ○○の提案を行ったのはいつ？」などの質問に即座に回答し情報の属人化を防止。'
-  }
-];
+const solutions: Service[] = getServiceSummaries();
 
 
 export default function SolutionsShowcase() {

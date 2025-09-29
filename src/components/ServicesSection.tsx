@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function ServicesSection() {
   return (
     <section id="services" className="py-20 lg:py-28 bg-slate-50">
@@ -44,7 +46,7 @@ export default function ServicesSection() {
           </a>
 
           {/* Service 2 - Hakoma-PSA- */}
-          <a href="/services/ai-matching/">
+          <Link href="/services/ai-matching/">
             <div className="interactive-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100 animate-fade-in-up stagger-2">
               <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6 interactive-icon">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,10 +72,10 @@ export default function ServicesSection() {
                 </li>
               </ul>
             </div>
-          </a>
+          </Link>
 
           {/* Service 3 - 業務効率化AIツール */}
-          <a href="/projects/">
+          <Link href="/projects/">
             <div className="interactive-card bg-white rounded-2xl p-8 shadow-lg border border-slate-100 animate-fade-in-up stagger-3">
               <div className="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6 interactive-icon">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,7 +101,7 @@ export default function ServicesSection() {
                 </li>
               </ul>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
