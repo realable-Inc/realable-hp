@@ -16,7 +16,18 @@ declare global {
   }
 }
 
-export default function ContactForm() {
+interface ContactFormProps {
+  onSubmissionSuccess?: (data: {
+    name: string;
+    company: string;
+    email: string;
+    phone: string;
+    subject: string;
+    message: string;
+  }) => void;
+}
+
+export default function ContactForm({ onSubmissionSuccess }: ContactFormProps) {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
@@ -75,15 +86,24 @@ export default function ContactForm() {
         });
 
         if (response.ok) {
-          // Redirect to thank you page
-          router.push('/contact/thanks');
+          // Call success callback instead of redirecting
+          if (onSubmissionSuccess) {
+            onSubmissionSuccess(formData);
+          } else {
+            // Fallback to redirect if no callback provided
+            router.push('/contact/thanks');
+          }
         } else {
           throw new Error('送信に失敗しました');
         }
       } else {
         // For development without reCAPTCHA
         console.log('Form submitted:', formData);
-        router.push('/contact/thanks');
+        if (onSubmissionSuccess) {
+          onSubmissionSuccess(formData);
+        } else {
+          router.push('/contact/thanks');
+        }
       }
     } catch (err) {
       setError('送信中にエラーが発生しました。もう一度お試しください。');
