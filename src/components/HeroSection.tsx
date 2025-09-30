@@ -26,12 +26,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[60vh]">
           {/* Left Content - Take up more space to avoid overlap */}
           <div className="lg:col-span-1">
-            <div className="animate-fade-in-up max-w-2xl">
-              <div className="mb-4">
-                <span className="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
-                  会社紹介
-                </span>
-              </div>
+          <div className="animate-fade-in-up max-w-2xl">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-8">
                 <span className="block text-white mb-2">不動産の可能性を</span>
                 <span className="block text-emerald-100">AIで最大化する</span>
@@ -59,13 +54,13 @@ export default function HeroSection() {
                 </Link>
                 <button
                   type="button"
-                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                   className="btn-secondary text-lg inline-flex items-center justify-center"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                 <span className="text-white">プロジェクト一覧</span>
+                 <span className="text-white">サービス一覧</span>
                 </button>
               </div>
             </div>

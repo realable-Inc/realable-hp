@@ -74,7 +74,7 @@ export default function ContactForm({ onSubmissionSuccess }: ContactFormProps) {
         );
 
         // Submit form with token
-        const response = await fetch('/api/contact', {
+        const response = await fetch('https://us-central1-realable-hp.cloudfunctions.net/contact', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
