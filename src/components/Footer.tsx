@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { LICENSE_NUMBER } from '@/data/company';
 
 export default function Footer() {
   return (
@@ -8,7 +9,9 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold mb-4 text-slate-900">REALABLE</h3>
             <p className="text-slate-600">
-              AI×不動産のプロ集団
+               宅建免許番号：
+               <br />
+              {LICENSE_NUMBER}
             </p>
           </div>
           
