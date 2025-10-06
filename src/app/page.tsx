@@ -14,13 +14,13 @@ export default function Home() {
           <VennDiagram />
         </div>
       </section>
+      <ProjectsSection />
+      <ServicesSection showHeader={false} />
       <section className="py-20 lg:py-28 bg-slate-50">
         <div className="container max-w-7xl mx-auto px-6 lg:px-8">
           <Founders />
         </div>
       </section>
-      <ServicesSection showHeader={false} />
-      <ProjectsSection />
       <RealEstateSection />
     </>
   );
