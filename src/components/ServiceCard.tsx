@@ -51,18 +51,6 @@ export default function ServiceCard({ service }: ServiceCardProps) {
             {service.description}
           </p>
 
-          {/* Features list if available */}
-          {service.features && service.features.length > 0 && (
-            <ul className="space-y-2 text-sm text-slate-600 mb-4">
-              {service.features.map((feature, index) => (
-                <li key={index} className="flex items-start">
-                  <div className="w-1.5 h-1.5 bg-emerald-600 rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          )}
-
           {/* Call to Action */}
           <div className="flex items-center text-emerald-600 font-medium text-sm group-hover:text-emerald-700 transition-colors mt-auto">
             詳細を見る
