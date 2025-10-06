@@ -1,7 +1,10 @@
 export interface ServiceDetail {
   id: string;
   title: string;
-  description: string;
+  description: {
+    title: string;
+    points: string[];
+  };
   overview: string;
   overviewImage?: string;
   operationFlow: {
@@ -22,7 +25,14 @@ export const servicesData: ServiceDetail[] = [
   {
     id: 'ai-matching',
     title: 'オーダー×物件 AIマッチング',
-    description: 'AIが担当者の手打ちメモも理解して最適にマッチング。提案すべき物件を通知し、営業の機会損失を最小化。',
+    description: {
+      title: 'AIが担当者の手打ちメモも理解して最適にマッチング。提案すべき物件を通知し、営業の機会損失を最小化。',
+      points: [
+        '顧客オーダーと物件データの自動照合',
+        '営業担当者による項目にないメモ書き情報を活用',
+        '手作業管理からの脱却で業務効率化'
+      ]
+    },
     overview: 'AIが担当者の手打ちメモも理解して最適にマッチング。提案すべき物件を通知し、営業の機会損失を最小化。',
     overviewImage: '/images/services/matching/matching.png',
     operationFlow: {
@@ -64,7 +74,13 @@ export const servicesData: ServiceDetail[] = [
   {
     id: 'price-prediction',
     title: '不動産価格予測モデル',
-    description: 'AIが過去事例から学習し適正価格を算出。価格影響要素を数値化・可視化することで根拠のある価格設定が可能。',
+    description: {
+      title: 'AIが過去事例から学習し適正価格を算出。価格影響要素を数値化・可視化することで根拠のある価格設定が可能。',
+      points: [
+        'どの要素が価格に影響を与えたかを可視化',
+        '適切な価格を予測'
+      ]
+    },
     overview: 'AIが過去事例から学習し適正価格を算出。価格影響要素を数値化・可視化することで根拠のある価格設定が可能。',
     overviewImage: '/images/services/prediction/prediction.png',
     operationFlow: {
@@ -96,7 +112,14 @@ export const servicesData: ServiceDetail[] = [
   {
     id: 'ocr-system',
     title: 'マイソクOCR',
-    description: 'どんなレイアウトでも対応可能なOCR技術で、REINSからの大量PDFを一括データ化。システムやエクセルに即座に取り込み。',
+    description: {
+      title: 'どんなレイアウトでも対応可能なOCR技術で、REINSからの大量PDFを一括データ化。システムやエクセルに即座に取り込み。',
+      points: [
+        'AIが任意のフォーマットに対応',
+        '画面上ですぐにデータ修正',
+        'システムやエクセルに即座に取り込み'
+      ]
+    },
     overview: 'どんなレイアウトでも対応可能なOCR技術で、REINSからの大量PDFを一括データ化。システムやエクセルに即座に取り込み。',
     overviewImage: '/images/services/maisoku/maisoku-ocr.png',
     operationFlow: {
@@ -129,7 +152,13 @@ export const servicesData: ServiceDetail[] = [
   {
     id: 'sales-analysis',
     title: '営業トークの見える化',
-    description: 'Speech2text AIで営業トークを自動テキスト化・分析。最適な営業トークを見える化し、オーダー情報を自動抽出。',
+    description: {
+      title: 'Speech2text AIで営業トークを自動テキスト化・分析。最適な営業トークを見える化し、オーダー情報を自動抽出。',
+      points: [
+        '営業トークの録音データから自動で文字起こし',
+        '営業の機会損失を最小化'
+      ]
+    },
     overview: 'Speech2text AIで営業トークを自動テキスト化・分析。最適な営業トークを見える化し、オーダー情報を自動抽出。',
     overviewImage: '/images/services/sales/sales-analysis.png',
     operationFlow: {
@@ -158,7 +187,13 @@ export const servicesData: ServiceDetail[] = [
   {
     id: 'reins-csv',
     title: 'REINS CSV化ツール',
-    description: 'ワンクリックで最大50件の物件データをCSV出力。整理されたフォーマットで手作業時間を大幅削減。',
+    description: {
+      title: 'ワンクリックで最大50件の物件データをCSV出力。整理されたフォーマットで手作業時間を大幅削減。',
+      points: [
+        'REINSデータ一括CSV化（最大50件）',
+        '整理されたフォーマットで手作業時間を大幅削減'
+      ]
+    },
     overview: 'ワンクリックで最大50件の物件データをCSV出力。整理されたフォーマットで手作業時間を大幅削減。',
     overviewImage: '/images/services/csv/reins-csv.png',
     operationFlow: {
@@ -187,7 +222,13 @@ export const servicesData: ServiceDetail[] = [
   {
     id: 'ai-chatbot',
     title: '社内版AIチャットボット（RAG）',
-    description: 'RAG技術で社内情報をAIに記憶。「XXへ〇〇の提案を行ったのはいつ？」などの質問に即座に回答し情報の属人化を防止。',
+    description: {
+      title: 'RAG技術で社内情報をAIに記憶。「XXへ〇〇の提案を行ったのはいつ？」などの質問に即座に回答し情報の属人化を防止。',
+      points: [
+        '膨大な社内文書の検索をスピード化',
+        '社内AIチャットボット'
+      ]
+    },
     overview: 'RAG技術で社内情報をAIに記憶。「XXへ〇〇の提案を行ったのはいつ？」などの質問に即座に回答し情報の属人化を防止。',
     overviewImage: '/images/services/chat/chat-bot.png',
     operationFlow: {
@@ -222,5 +263,5 @@ export function getServiceById(id: string): ServiceDetail | undefined {
 }
 
 export function getServiceSummaries() {
-  return servicesData.map(({ id, title, description, overviewImage }) => ({ id, title, description, overviewImage }));
+  return servicesData.map(({ id, title, description, overviewImage }) => ({ id, title, description: description.title, points: description.points, overviewImage }));
 }

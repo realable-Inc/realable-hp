@@ -6,8 +6,8 @@ export interface Service {
   id: string;
   title: string;
   description: string;
+  points?: string[];
   overviewImage?: string;
-  features?: string[];
   link?: string;
 }
 
@@ -50,6 +50,18 @@ export default function ServiceCard({ service }: ServiceCardProps) {
           <p className="text-slate-600 leading-relaxed mb-4 text-sm">
             {service.description}
           </p>
+
+          {/* Points list if available */}
+          {service.points && service.points.length > 0 && (
+            <ul className="space-y-2 text-sm text-slate-600 mb-4">
+              {service.points.map((point, index) => (
+                <li key={index} className="flex items-start">
+                  <div className="w-1.5 h-1.5 bg-emerald-600 rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          )}
 
           {/* Call to Action */}
           <div className="flex items-center text-emerald-600 font-medium text-sm group-hover:text-emerald-700 transition-colors mt-auto">
