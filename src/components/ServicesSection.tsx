@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import ServiceCard from './ServiceCard';
-import { homeServices } from '@/data/data';
+import { homeServices } from '@/data/projects';
 
 interface ServicesSectionProps {
   showHeader?: boolean;

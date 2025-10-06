@@ -1,5 +1,3 @@
-import { ServiceDetail as ProjectDetail } from './services';
-
 export interface HomeService {
   id: string;
   title: string;
