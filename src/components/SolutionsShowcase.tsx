@@ -1,23 +1,37 @@
-'use client';
+"use client";
 
-import ServiceCard, { Service } from './ServiceCard';
-import { getServiceSummaries } from '@/data/services';
+import ServiceCard, { Service } from "./ServiceCard";
+import { getServiceSummaries } from "@/data/services";
 
 const solutions: Service[] = getServiceSummaries();
-
 
 export default function SolutionsShowcase() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-emerald-600 to-emerald-700 text-white py-20 lg:py-28">
+      <section className="relative text-white py-20 lg:py-20">
+        <div
+          className="absolute inset-0 bg-emerald-500"
+          style={{ opacity: 0.5, zIndex: -1 }}
+        ></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url(/images/services/header-bg.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.3,
+            zIndex: -1,
+          }}
+        ></div>
         <div className="container max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+            <h1 className="text-3xl lg:text-6xl font-bold mb-6">
               プロジェクト一覧
             </h1>
-            <p className="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
-              AI技術を活用した革新的な不動産ソリューションの実績をご紹介します。<br />
+            <p className="text-lg lg:text-2xl max-w-4xl mx-auto leading-relaxed">
+              AI技術を活用した革新的な不動産ソリューションの実績をご紹介します。
+              <br />
               カードをクリックして、各サービスの詳細をご覧ください
             </p>
           </div>

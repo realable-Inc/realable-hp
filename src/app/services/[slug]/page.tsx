@@ -33,14 +33,13 @@ export default async function ServiceDetailPage({
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${service.overviewImage})`,
+            backgroundImage: "url(/images/services/header-bg.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.3,
             zIndex: 0,
           }}
         ></div>
-        {/* Optional: Add content here if needed */}
       </section>
 
       {/* 概要セクション */}
