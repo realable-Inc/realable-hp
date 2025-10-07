@@ -128,9 +128,9 @@ export default async function ServiceDetailPage({
             <div className="space-y-6">
               {service.operationFlow.steps.map((step, index) => (
                 <div key={index} className="relative">
-                  <div className="flex items-start">
+                  <div className="flex items-center">
                     <div
-                      className={`w-12 h-12 bg-gradient-to-br rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg flex-shrink-0 z-10`}
+                      className={`w-12 h-12 bg-gradient-to-br rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg flex-shrink-0 z-10 bg-emerald-500`}
                     >
                       {index + 1}
                     </div>
@@ -140,9 +140,7 @@ export default async function ServiceDetailPage({
                       </div>
                     </div>
                   </div>
-                  {index < service.operationFlow.steps.length - 1 && (
-                    <div className="absolute left-6 top-12 w-0.5 h-6 bg-slate-300 transform -translate-x-1/2"></div>
-                  )}
+                  
                 </div>
               ))}
             </div>
