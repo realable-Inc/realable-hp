@@ -21,52 +21,24 @@ export default function Thanks() {
             </svg>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
             お問い合わせを受け付けました。
           </h1>
-
-          <div className="bg-blue-50 rounded-lg p-6 mb-8">
-            <h2 className="text-lg font-semibold text-gray-900 mb-3">
-              今後の流れ
-            </h2>
-            <ol className="text-left space-y-2 text-gray-700">
-              <li className="flex items-start">
-                <span className="font-bold mr-2">1.</span>
-                <span>お問い合わせ内容の確認</span>
-              </li>
-              <li className="flex items-start">
-                <span className="font-bold mr-2">2.</span>
-                <span>担当者からのご連絡（2営業日以内）</span>
-              </li>
-              <li className="flex items-start">
-                <span className="font-bold mr-2">3.</span>
-                <span>詳細のヒアリング・ご相談</span>
-              </li>
-              <li className="flex items-start">
-                <span className="font-bold mr-2">4.</span>
-                <span>ご提案・お見積もり</span>
-              </li>
-            </ol>
-          </div>
-
-          <div className="text-sm text-gray-600 mb-8">
-            <p>
-              お急ぎの場合は、お電話でもお問い合わせを承っております。
-              <br />
-              TEL: 03-XXXX-XXXX（平日 9:00 - 18:00）
-            </p>
-          </div>
+          <p className="text-sm text-gray-600 mb-8">
+            ご入力いただいた内容を確認のうえ、2営業日以内に担当者よりご連絡いたします。<br />
+          </p>
+         
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/"
-              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              className="inline-block bg-emerald-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
             >
               トップページへ戻る
             </Link>
             <Link
               href="/projects"
-              className="inline-block bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+              className="inline-block bg-white text-emerald-500 border-2 border-emerald-500 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition-colors"
             >
               プロジェクト実績を見る
             </Link>
