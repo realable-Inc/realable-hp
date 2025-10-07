@@ -152,11 +152,13 @@ export const servicesData: ServiceDetail[] = [
           title: "AIが任意のフォーマットに対応",
           description:
             "従来のOCRでは、事前にフォーマットを指定する必要があったため、新しいフォーマットへはすぐに対応できなかったのに対し、AIによるOCRではAIがフォーマットを自動で判定するため、フォーマットの変更や、他社のマイソクフォーマットにも柔軟に対応可能です。",
+          image: "/images/services/maisoku/ocr-before-upload.png",
         },
         {
           title: "画面上ですぐにデータ修正",
           description:
             "AIによる読み取り結果はすぐに表形式で表示され、アップロードしたPDFを画面上で確認しながらすぐに修正することができます。",
+            image: "/images/services/maisoku/uploaded1.png",
         },
         {
           title: "CSVによる出力",
