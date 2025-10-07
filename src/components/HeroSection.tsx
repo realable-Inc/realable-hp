@@ -4,13 +4,24 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section id="home" className="relative hero-gradient text-white overflow-x-hidden min-h-screen">
-      <div className="absolute inset-0 bg-black/10"></div>
-      
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="dot-pattern w-full h-full"></div>
-      </div>
+    <section id="home" className="relative text-white overflow-x-hidden min-h-screen">
+      {/* Emerald Background */}
+      <div
+        className="absolute inset-0 bg-emerald-500"
+        style={{ opacity: 0.8, zIndex: -1 }}
+      ></div>
+
+      {/* Background Image */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "url(/images/services/header-bg.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.3,
+          zIndex: -1,
+        }}
+      ></div>
       
       {/* Section Image - Only in Hero, hidden on tablet and below */}
       <div className="hidden lg:block absolute -right-[420px] lg:-right-96 xl:-right-80 2xl:-right-64 top-1/2 -translate-y-1/2 z-0">
