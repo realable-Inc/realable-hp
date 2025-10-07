@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 export default function Navigation() {
@@ -19,14 +20,14 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/">
-              <Button
-                variant="text"
-                size="lg"
-                className="text-xl font-bold text-gray-900 hover:text-primary p-0 h-auto font-sans"
-              >
-                Realable Inc.
-              </Button>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/services/logo.svg"
+                alt="Realable Inc."
+                width={100}
+                height={20}
+                priority
+              />
             </Link>
           </div>
 

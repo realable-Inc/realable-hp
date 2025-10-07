@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata = {
-  title: '居抜きマッチングサービス「Hakoma」| リアラブル株式会社',
+  title: 'リアラブル株式会社',
   description: '退去者と入居者を直接マッチングさせることで、居抜きをスムーズに実現するWebサービス「ハコマ」。フリマ感覚で物件を掲載し、直接交渉が可能です。',
 };
 
