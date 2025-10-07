@@ -65,7 +65,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               {service.title}
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              {service.description}
+              {service.description.title}
             </p>
           </div>
         </div>

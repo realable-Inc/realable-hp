@@ -175,51 +175,6 @@ export default function HakomaPage() {
         </div>
       </section>
 
-      {/* Commercial Property Management Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
-        <div className="container max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              商業物件の管理・仲介
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              宅地建物取引業者として、積極的な提案力をもった不動産業務を提供
-            </p>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-white/80 backdrop-blur-sm border border-slate-200 rounded-2xl p-8 mb-12 shadow-xl">
-              <div className="flex items-center justify-center gap-6 mb-6">
-                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                </div>
-                <div className="text-left">
-                  <p className="text-lg text-slate-700 leading-relaxed">
-                    リアラブルは、<span className="font-semibold text-slate-900">宅地建物取引業者</span>として商業物件の管理・仲介も行っています。
-                  </p>
-                  <p className="text-lg text-slate-700 leading-relaxed mt-3">
-                    居抜き物件・オフィス、店舗向け物件を中心に<span className="font-semibold text-emerald-600">積極的な提案力</span>をもった不動産業務を提供します。
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl max-w-4xl mx-auto animate-fade-in-up">
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent z-10"></div>
-              <Image
-                src="/images/services/hakoma/hakoma-3.png"
-                alt="商業物件の管理・仲介"
-                width={900}
-                height={500}
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-emerald-500 to-emerald-600"></div>
