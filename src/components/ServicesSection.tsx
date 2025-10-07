@@ -1,25 +1,42 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import ServiceCard from './ServiceCard';
-import { homeServices } from '@/data/projects';
+import Link from "next/link";
+import ServiceCard from "./ServiceCard";
+import { homeServices } from "@/data/projects";
 
 interface ServicesSectionProps {
   showHeader?: boolean;
 }
 
-export default function ServicesSection({ showHeader = true }: ServicesSectionProps) {
+export default function ServicesSection({
+  showHeader = true,
+}: ServicesSectionProps) {
   return (
     <>
       {showHeader && (
-        <section className="bg-gradient-to-br from-emerald-600 to-emerald-700 text-white py-20 lg:py-28">
+        <section className="relative text-white py-20 lg:py-20">
+          <div
+            className="absolute inset-0 bg-emerald-500"
+            style={{ opacity: 0.5, zIndex: -1 }}
+          ></div>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "url(/images/services/header-bg.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              opacity: 0.3,
+              zIndex: -1,
+            }}
+          ></div>
           <div className="container max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+              <h1 className="text-3xl lg:text-6xl font-bold mb-6">
                 サービス一覧
               </h1>
-              <p className="text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed">
-                AI技術と不動産専門知識を活用した革新的なサービスを提供します。<br />
+              <p className="text-lg lg:text-2xl max-w-3xl mx-auto leading-relaxed">
+                AI技術と不動産専門知識を活用した革新的なサービスを提供します。
+                <br />
                 カードをクリックして、各サービスの詳細をご覧ください
               </p>
             </div>
@@ -52,8 +69,18 @@ export default function ServicesSection({ showHeader = true }: ServicesSectionPr
               <Link href="/services">
                 <button className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl">
                   全てのサービスを見る
-                  <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-5 h-5 ml-2 inline"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </button>
               </Link>
