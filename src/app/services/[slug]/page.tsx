@@ -1,33 +1,5 @@
-import { notFound } from 'next/navigation';
-import { servicesData, getServiceById } from '@/data/services';
-
-// Map service IDs to gradient and icon data
-const serviceStyles = {
-  'ai-matching': {
-    gradient: 'from-emerald-500 to-emerald-600',
-    icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
-  },
-  'price-prediction': {
-    gradient: 'from-emerald-500 to-emerald-600',
-    icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'
-  },
-  'ocr-system': {
-    gradient: 'from-emerald-500 to-emerald-600',
-    icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'
-  },
-  'sales-analysis': {
-    gradient: 'from-emerald-500 to-emerald-600',
-    icon: 'M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z'
-  },
-  'reins-csv': {
-    gradient: 'from-emerald-500 to-emerald-600',
-    icon: 'M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10'
-  },
-  'ai-chatbot': {
-    gradient: 'from-emerald-500 to-emerald-600',
-    icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z'
-  }
-};
+import { notFound } from "next/navigation";
+import { servicesData, getServiceById } from "@/data/services";
 
 export function generateStaticParams() {
   return servicesData.map((service) => ({
@@ -41,43 +13,43 @@ interface ServiceDetailPageProps {
   }>;
 }
 
-export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
+export default async function ServiceDetailPage({
+  params,
+}: ServiceDetailPageProps) {
   const { slug } = await params;
   const service = getServiceById(slug);
-  const style = serviceStyles[slug as keyof typeof serviceStyles];
-
-  if (!service || !style) {
+  if (!service) {
     notFound();
   }
 
   return (
     <>
-      {/* ヒーローセクション */}
-      <section className={`bg-gradient-to-br ${style.gradient} text-white py-20 lg:py-28`}>
-        <div className="container max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-8 backdrop-blur-sm">
-              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={style.icon} />
-              </svg>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-              {service.title}
-            </h1>
-            <p className="text-xl text-white/90 leading-relaxed">
-              {service.description.title}
-            </p>
-          </div>
-        </div>
+      {/* ヒーローセクション - 低不透明度エメラルド色オーバーレイ＋画像 */}
+      <section className="relative h-50">
+        <div
+          className="absolute inset-0 bg-emerald-500"
+          style={{ opacity: 0.3, zIndex: 1 }}
+        ></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${service.overviewImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.3,
+            zIndex: 0,
+          }}
+        ></div>
+        {/* Optional: Add content here if needed */}
       </section>
 
       {/* 概要セクション */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-17 bg-white">
         <div className="container max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
-              サービス概要
-            </h2>
+            <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+              {service.title}
+            </h1>
             <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mx-auto">
               {service.overview}
             </p>
@@ -99,24 +71,41 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               <div>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <div className={`w-3 h-3 bg-gradient-to-r ${style.gradient} rounded-full mr-3`}></div>
+                    <div
+                      className={`w-3 h-3 bg-gradient-to-r rounded-full mr-3`}
+                    ></div>
                     <span className="text-slate-600">AIによる自動化</span>
                   </div>
                   <div className="flex items-center">
-                    <div className={`w-3 h-3 bg-gradient-to-r ${style.gradient} rounded-full mr-3`}></div>
+                    <div
+                      className={`w-3 h-3 bg-gradient-to-r rounded-full mr-3`}
+                    ></div>
                     <span className="text-slate-600">業務効率の向上</span>
                   </div>
                   <div className="flex items-center">
-                    <div className={`w-3 h-3 bg-gradient-to-r ${style.gradient} rounded-full mr-3`}></div>
+                    <div
+                      className={`w-3 h-3 bg-gradient-to-r rounded-full mr-3`}
+                    ></div>
                     <span className="text-slate-600">コスト削減</span>
                   </div>
                 </div>
               </div>
               <div className="relative">
-                <div className={`relative h-96 bg-gradient-to-br ${style.gradient} rounded-2xl flex items-center justify-center shadow-xl`}>
+                <div
+                  className={`relative h-96 bg-gradient-to-br rounded-2xl flex items-center justify-center shadow-xl`}
+                >
                   <div className="text-white text-center">
-                    <svg className="w-24 h-24 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={style.icon} />
+                    <svg
+                      className="w-24 h-24 mx-auto mb-4 opacity-80"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                      />
                     </svg>
                     <h3 className="text-2xl font-bold">{service.title}</h3>
                   </div>
@@ -141,7 +130,9 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               {service.operationFlow.steps.map((step, index) => (
                 <div key={index} className="relative">
                   <div className="flex items-start">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${style.gradient} rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg flex-shrink-0 z-10`}>
+                    <div
+                      className={`w-12 h-12 bg-gradient-to-br rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg flex-shrink-0 z-10`}
+                    >
                       {index + 1}
                     </div>
                     <div className="ml-6 flex-1">
@@ -172,8 +163,19 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
 
             <div className="space-y-16">
               {service.features.points.map((feature, index) => (
-                <div key={index} className={feature.image ? "grid lg:grid-cols-2 gap-8 items-start" : "flex justify-center"}>
-                  <div className={feature.image ? "text-left" : "text-left max-w-xl"}>
+                <div
+                  key={index}
+                  className={
+                    feature.image
+                      ? "grid lg:grid-cols-2 gap-8 items-start"
+                      : "flex justify-center"
+                  }
+                >
+                  <div
+                    className={
+                      feature.image ? "text-left" : "text-left max-w-xl"
+                    }
+                  >
                     <h3 className="text-2xl font-bold text-slate-900 mb-4">
                       {index + 1}. {feature.title}
                     </h3>
@@ -198,7 +200,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
       </section>
 
       {/* 今後の展望セクション - AIマッチングのみ */}
-      {service.id === 'ai-matching' && (
+      {service.id === "ai-matching" && (
         <section className="py-20 lg:py-28 bg-slate-50">
           <div className="container max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -218,31 +220,55 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
                 </p>
                 <div className="space-y-4 text-left">
                   <div className="flex items-start">
-                    <div className={`w-3 h-3 bg-gradient-to-r ${style.gradient} rounded-full mr-3 mt-2 flex-shrink-0`}></div>
+                    <div
+                      className={`w-3 h-3 bg-gradient-to-r rounded-full mr-3 mt-2 flex-shrink-0`}
+                    ></div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">CRM機能の搭載</h4>
-                      <p className="text-slate-600">顧客情報の一元管理と営業活動の可視化</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">
+                        CRM機能の搭載
+                      </h4>
+                      <p className="text-slate-600">
+                        顧客情報の一元管理と営業活動の可視化
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className={`w-3 h-3 bg-gradient-to-r ${style.gradient} rounded-full mr-3 mt-2 flex-shrink-0`}></div>
+                    <div
+                      className={`w-3 h-3 bg-gradient-to-r rounded-full mr-3 mt-2 flex-shrink-0`}
+                    ></div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">物件管理システム統合</h4>
-                      <p className="text-slate-600">物件情報の一元化と効率的な管理体制構築</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">
+                        物件管理システム統合
+                      </h4>
+                      <p className="text-slate-600">
+                        物件情報の一元化と効率的な管理体制構築
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className={`w-3 h-3 bg-gradient-to-r ${style.gradient} rounded-full mr-3 mt-2 flex-shrink-0`}></div>
+                    <div
+                      className={`w-3 h-3 bg-gradient-to-r rounded-full mr-3 mt-2 flex-shrink-0`}
+                    ></div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">分析・レポート機能</h4>
-                      <p className="text-slate-600">営業成果の分析とマッチング精度の継続的改善</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">
+                        分析・レポート機能
+                      </h4>
+                      <p className="text-slate-600">
+                        営業成果の分析とマッチング精度の継続的改善
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className={`w-3 h-3 bg-gradient-to-r ${style.gradient} rounded-full mr-3 mt-2 flex-shrink-0`}></div>
+                    <div
+                      className={`w-3 h-3 bg-gradient-to-r rounded-full mr-3 mt-2 flex-shrink-0`}
+                    ></div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">モバイルアプリ対応</h4>
-                      <p className="text-slate-600">外出先からでもリアルタイムで情報確認・更新が可能</p>
+                      <h4 className="font-semibold text-slate-900 mb-1">
+                        モバイルアプリ対応
+                      </h4>
+                      <p className="text-slate-600">
+                        外出先からでもリアルタイムで情報確認・更新が可能
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -263,7 +289,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
           </p>
           <a
             href="/contact"
-            className={`inline-block bg-gradient-to-r ${style.gradient} text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-200 transform hover:scale-[1.02]`}
+            className={`inline-block bg-gradient-to-r text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-200 transform hover:scale-[1.02]`}
           >
             お問い合わせはこちら
           </a>
