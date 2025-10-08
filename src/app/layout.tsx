@@ -12,7 +12,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "リアラブル株式会社 | AI×不動産テック | Hakoma開発企業",
+  title: "リアラブル株式会社",
   description: "AI技術と不動産専門知識を融合し、業界のDXを推進するリアラブル株式会社。AIマッチングプラットフォーム「Hakoma」、OCR技術、価格予測モデルなど革新的なソリューションを提供。東京大学出身の創業メンバーによる高い技術力でお客様の課題を解決します。",
   keywords: "リアラブル, Realable, 不動産テック, AI, 機械学習, Hakoma, AIマッチング, OCR, 不動産価格予測, 宅地建物取引業, DXコンサルティング, 東京大学, PropTech, 不動産投資, データサイエンス",
   authors: [{ name: "リアラブル株式会社" }],

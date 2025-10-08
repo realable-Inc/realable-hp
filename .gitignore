@@ -45,4 +45,23 @@ next-env.d.ts
 *.serena.cache
 .serena-memory/
 
+# Firebase
+.firebase/*
+.firebaserc
+
+# Firebase Functions
+functions/node_modules/
+functions/lib/
+functions/.runtimeconfig.json
+functions/package-lock.json
+functions/*.log
+
+# Deploy scripts
+scripts/*.bak
+.env.bak
+
+# Logs
+*.log
+*.cache
+
 CLAUDE.md
