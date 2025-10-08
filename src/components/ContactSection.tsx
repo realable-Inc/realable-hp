@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ContactForm from '@/components/ContactForm';
 import { Button } from '@/components/ui/button';
+import { getSubjectLabel } from '@/constants/contactOptions';
 
 interface SubmittedData {
   name: string;
@@ -20,21 +21,6 @@ export default function ContactSection() {
   const handleSubmissionSuccess = (data: SubmittedData) => {
     setSubmittedData(data);
     setIsSubmitted(true);
-  };
-
-  const handleReset = () => {
-    setIsSubmitted(false);
-    setSubmittedData(null);
-  };
-
-  const getSubjectLabel = (value: string) => {
-    switch (value) {
-      case 'consultation': return '開発相談';
-      case 'project': return 'プロジェクト依頼';
-      case 'partnership': return 'パートナーシップ';
-      case 'other': return 'その他';
-      default: return value;
-    }
   };
 
   return (
@@ -110,10 +96,6 @@ export default function ContactSection() {
                     </div>
                   </div>
                 )}
-
-                <Button onClick={handleReset} variant="outline" className="mr-4">
-                  新しいお問い合わせ
-                </Button>
                 <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                   トップへ戻る
                 </Button>

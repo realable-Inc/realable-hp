@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select } from '@/components/ui/select';
 import { useContactForm } from '@/hooks/useContactForm';
+import { CONTACT_SUBJECTS } from '@/constants/contactOptions';
 
 interface ContactFormProps {
   onSubmissionSuccess?: (data: {
@@ -115,12 +116,11 @@ export default function ContactForm({ onSubmissionSuccess }: ContactFormProps) {
           className="focus:!outline-none focus:!ring-0 focus:!ring-offset-0 focus:!shadow-[0_0_0_2px_rgb(16,185,129)]"
         >
           <option value="">選択してください</option>
-          <option value="consultation">開発相談</option>
-          <option value="project">プロジェクト依頼</option>
-          <option value="partnership">パートナーシップ</option>
-          <option value="recruit">サービス導入のご相談</option>
-          <option value="others">資料請求</option>
-          <option value="other">その他</option>
+          {CONTACT_SUBJECTS.map((subject) => (
+            <option key={subject.value} value={subject.value}>
+              {subject.label}
+            </option>
+          ))}
         </Select>
       </div>
 
