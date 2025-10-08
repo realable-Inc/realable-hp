@@ -8,9 +8,10 @@ const ALLOWED_ORIGINS = [
 /**
  * CORSヘッダーを設定し、OPTIONSリクエストを処理する
  * @param {Request} request HTTPリクエスト
- * @param {any} response HTTPレスポンス
+ * @param {object} response HTTPレスポンス
  * @return {boolean} OPTIONSリクエストの場合はtrue、それ以外はfalse
  */
+// eslint-disable-next-line require-jsdoc, @typescript-eslint/no-explicit-any
 export function handleCors(request: Request, response: any): boolean {
   const origin = request.headers.origin || "";
 

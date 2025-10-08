@@ -50,7 +50,7 @@ export const sendReplyEmail = onRequest(
       const clientEmailContent = `
 ${name} 様
 
-この度は、Realableへお問い合わせいただき、誠にありがとうございます。
+この度は、リアラブル株式会社へお問い合わせいただき、誠にありがとうございます。
 
 お問い合わせ内容を確認いたしました。
 2営業日以内に担当者よりご返信させていただきます。
@@ -58,8 +58,9 @@ ${name} 様
 今しばらくお待ちくださいますよう、お願い申し上げます。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Realable（リアラブル）
-不動産開発コンサルティング
+リアラブル株式会社
+Email: contact@hakoma.tokyo
+https://realable.tokyo
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ※このメールは自動送信されています。
@@ -68,9 +69,9 @@ Realable（リアラブル）
 
       const result = await sendEmail(
         resendApiKey,
-        "Realable <noreply@hakoma.tokyo>",
+        "リアラブル株式会社 <noreply@hakoma.tokyo>",
         email,
-        "【Realable】お問い合わせを受け付けました",
+        "【リアラブル株式会社】お問い合わせを受け付けました",
         clientEmailContent
       );
 
