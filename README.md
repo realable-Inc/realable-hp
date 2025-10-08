@@ -134,31 +134,57 @@ npm run build
 
 ## デプロイ方法
 
-### 環境変数設定
-`.env`ファイルに必要な環境変数を設定：
+### 前提条件
+- Firebase CLIのインストール: `npm install -g firebase-tools`
+- Firebaseプロジェクト: `realable-hp`
+- Firebase認証: `firebase login`
+
+### Firebase Secretsの設定
+
+Firebase Functionsで使用するシークレットを設定：
+
 ```bash
-NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_recaptcha_site_key
-RESEND_API_KEY=your_resend_api_key
-ADMIN_EMAIL=admin@example.com
+# Resend APIキーを設定
+firebase functions:secrets:set RESEND_API_KEY --project realable-hp
+
+# 受信者メールアドレスを設定（カンマ区切りで複数指定可能）
+firebase functions:secrets:set RECIPIENT_EMAILS --project realable-hp
 ```
 
-**環境変数の説明:**
-- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`: Google reCAPTCHA v3のサイトキー
+### 手動デプロイ
 
-### デプロイコマンド
+#### 1. Hosting + Functionsを同時デプロイ
 ```bash
-# 環境変数チェック付きビルド・デプロイ
-npm run deploy
+npm run deploy:all
 ```
 
-デプロイスクリプトは以下の処理を自動実行します：
-- 環境変数の確認（未設定時は対話的入力）
-- Firebase Functions依存関係のインストール
-- プロダクションビルド
-- Firebase Hosting・Functionsへのデプロイ
+#### 2. Hostingのみデプロイ
+```bash
+npm run deploy:hosting
+```
+
+#### 3. Functionsのみデプロイ
+```bash
+npm run deploy:functions
+```
+
+### デプロイ構成
+
+**Firebase Hosting:**
+- ビルドディレクトリ: `out/`
+- 公開URL: `https://realable.tokyo`
+
+**Firebase Functions:**
+- リージョン: `asia-northeast1`
+- エンドポイント:
+  - `sendContactEmail`: お問い合わせメール送信
+  - `sendReplyEmail`: 自動返信メール送信
 
 ### 利用可能なコマンド
-- `npm run dev` - 開発サーバー起動
+- `npm run dev` - 開発サーバー起動（Turbopack使用）
 - `npm run build` - プロダクションビルド
-- `npm run deploy:all` - 環境変数チェック付きビルド・デプロイ
-- `npm run lint` - ESLintチェック
+- `npm run start` - プロダクションサーバー起動
+- `npm run lint` - Next.js Linter実行
+- `npm run deploy:hosting` - Firebase Hostingへデプロイ
+- `npm run deploy:functions` - Firebase Functionsへデプロイ
+- `npm run deploy:all` - Hosting + Functionsを一括デプロイ
