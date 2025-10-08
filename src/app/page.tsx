@@ -16,7 +16,7 @@ export default function Home() {
       </section>
       <ServicesSection showHeader={false} />
       <ProjectsSection />
-      <RealEstateSection />
+      {/* <RealEstateSection /> */}
     </>
   );
 }
