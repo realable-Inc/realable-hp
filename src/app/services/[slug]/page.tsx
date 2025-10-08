@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { servicesData, getServiceById } from "@/data/services";
+import Link from "next/link";
 
 export function generateStaticParams() {
   return servicesData.map((service) => ({
@@ -284,12 +285,11 @@ export default async function ServiceDetailPage({
           <p className="text-xl text-slate-600 mb-8">
             詳細な資料やデモのご希望、導入に関するご相談はお気軽にお問い合わせください
           </p>
-          <a
-            href="/contact"
-            className={`inline-block bg-gradient-to-r text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-200 transform hover:scale-[1.02]`}
-          >
-            お問い合わせはこちら
-          </a>
+          <Link href="/contact">
+              <button className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl">
+                お問い合わせはこちら
+              </button>
+            </Link>
         </div>
       </section>
     </>
