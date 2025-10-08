@@ -55,7 +55,7 @@ export default function HeroSection() {
                 <Link href="/contact">
                   <button
                     type="button"
-                    className="btn-primary text-lg inline-flex items-center justify-center w-full"
+                    className="text-lg inline-flex items-center justify-center w-full px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition-all duration-200 cursor-pointer"
                   >
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -66,12 +66,12 @@ export default function HeroSection() {
                 <button
                   type="button"
                   onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="btn-secondary text-lg inline-flex items-center justify-center"
+                  className="text-lg inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition-all duration-200 cursor-pointer"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                 <span className="text-white">サービス一覧</span>
+                  サービス一覧
                 </button>
               </div>
             </div>
