@@ -50,6 +50,7 @@ reCAPTCHA v3、送信後サンクスページ＋管理者メール通知。
 - サービス詳細ページ（動的ルーティング）
 - プロジェクト事例紹介（カード形式で実装）
 - お問い合わせフォーム（reCAPTCHA v3対応）
+- メール送信機能（Resend使用）
 - 会社概要ページ
 
 ### UI/UX 変更点
@@ -138,7 +139,11 @@ npm run build
 ```bash
 NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_recaptcha_site_key
 RESEND_API_KEY=your_resend_api_key
+ADMIN_EMAIL=admin@example.com
 ```
+
+**環境変数の説明:**
+- `NEXT_PUBLIC_RECAPTCHA_SITE_KEY`: Google reCAPTCHA v3のサイトキー
 
 ### デプロイコマンド
 ```bash
@@ -148,12 +153,12 @@ npm run deploy
 
 デプロイスクリプトは以下の処理を自動実行します：
 - 環境変数の確認（未設定時は対話的入力）
+- Firebase Functions依存関係のインストール
 - プロダクションビルド
-- Firebase Hostingへのデプロイ
+- Firebase Hosting・Functionsへのデプロイ
 
 ### 利用可能なコマンド
 - `npm run dev` - 開発サーバー起動
 - `npm run build` - プロダクションビルド
-- `npm run deploy` - 環境変数チェック付きビルド・デプロイ
+- `npm run deploy:all` - 環境変数チェック付きビルド・デプロイ
 - `npm run lint` - ESLintチェック
-

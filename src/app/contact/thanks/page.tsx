@@ -31,16 +31,16 @@ export default function Thanks() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/"
+              href="/contact"
               className="inline-block bg-emerald-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
             >
-              トップページへ戻る
+              新しいお問い合わせ
             </Link>
             <Link
-              href="/projects"
+              href="/"
               className="inline-block bg-white text-emerald-500 border-2 border-emerald-500 px-8 py-3 rounded-lg font-semibold hover:bg-emerald-50 transition-colors"
             >
-              プロジェクト実績を見る
+              トップページへ戻る
             </Link>
           </div>
         </div>

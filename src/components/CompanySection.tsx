@@ -1,6 +1,7 @@
 'use client';
 
 import CompanyDetails from './CompanySection/CompanyDetails';
+import Founders from './CompanySection/Founders';
 
 export default function CompanySection() {
   return (
@@ -15,6 +16,9 @@ export default function CompanySection() {
         <div className="max-w-6xl mx-auto">
           {/* Company Details Cards */}
           <CompanyDetails />
+
+          {/* 創業メンバー */}
+          <Founders />
         </div>
       </div>
     </section>
