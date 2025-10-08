@@ -4,6 +4,7 @@ import { useState } from 'react';
 import ContactForm from '@/components/ContactForm';
 import { Button } from '@/components/ui/button';
 import { getSubjectLabel } from '@/constants/contactOptions';
+import { useRouter } from 'next/navigation';
 
 interface SubmittedData {
   name: string;
@@ -17,7 +18,7 @@ interface SubmittedData {
 export default function ContactSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submittedData, setSubmittedData] = useState<SubmittedData | null>(null);
-
+  const router = useRouter();
   const handleSubmissionSuccess = (data: SubmittedData) => {
     setSubmittedData(data);
     setIsSubmitted(true);
@@ -96,7 +97,7 @@ export default function ContactSection() {
                     </div>
                   </div>
                 )}
-                <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                <Button onClick={() => router.push('/')}>
                   トップへ戻る
                 </Button>
               </div>
