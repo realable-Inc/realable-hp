@@ -1,97 +1,37 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select } from '@/components/ui/select';
+import { useContactForm } from '@/hooks/useContactForm';
+import { CONTACT_SUBJECTS } from '@/constants/contactOptions';
 
-declare global {
-  interface Window {
-    grecaptcha: {
-      execute: (siteKey: string, options: { action: string }) => Promise<string>;
-    };
-  }
+interface ContactFormProps {
+  onSubmissionSuccess?: (data: {
+    name: string;
+    company: string;
+    email: string;
+    phone: string;
+    subject: string;
+    message: string;
+  }) => void;
 }
 
-export default function ContactForm() {
+export default function ContactForm({ onSubmissionSuccess }: ContactFormProps) {
   const router = useRouter();
-  const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState('');
 
-  useEffect(() => {
-    // Load reCAPTCHA script
-    const script = document.createElement('script');
-    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError('');
-
-    try {
-      // Get reCAPTCHA token
-      if (window.grecaptcha && process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
-        const token = await window.grecaptcha.execute(
-          process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-          { action: 'submit' }
-        );
-
-        // Submit form with token
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            ...formData,
-            recaptchaToken: token
-          }),
-        });
-
-        if (response.ok) {
-          // Redirect to thank you page
-          router.push('/contact/thanks');
-        } else {
-          throw new Error('送信に失敗しました');
-        }
+  const { formData, isSubmitting, error, handleChange, handleSubmit } = useContactForm(
+    (data) => {
+      if (onSubmissionSuccess) {
+        onSubmissionSuccess(data);
       } else {
-        // For development without reCAPTCHA
-        console.log('Form submitted:', formData);
         router.push('/contact/thanks');
       }
-    } catch (err) {
-      setError('送信中にエラーが発生しました。もう一度お試しください。');
-      console.error('Form submission error:', err);
-    } finally {
-      setIsSubmitting(false);
     }
-  };
+  );
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -176,10 +116,11 @@ export default function ContactForm() {
           className="focus:!outline-none focus:!ring-0 focus:!ring-offset-0 focus:!shadow-[0_0_0_2px_rgb(16,185,129)]"
         >
           <option value="">選択してください</option>
-          <option value="consultation">開発相談</option>
-          <option value="project">プロジェクト依頼</option>
-          <option value="partnership">パートナーシップ</option>
-          <option value="other">その他</option>
+          {CONTACT_SUBJECTS.map((subject) => (
+            <option key={subject.value} value={subject.value}>
+              {subject.label}
+            </option>
+          ))}
         </Select>
       </div>
 
@@ -199,14 +140,14 @@ export default function ContactForm() {
         />
       </div>
 
-      <div className="rounded-lg bg-slate-600 p-4">
-        <p className="text-xs text-slate-300 leading-relaxed">
+      <div className="rounded-lg p-4 border border-black-100">
+        <p className="text-xs text-black leading-relaxed">
           このサイトはreCAPTCHAによって保護されており、Googleの
           <a 
             href="https://policies.google.com/privacy" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-teal-400 hover:text-teal-300 hover:underline ml-1"
+            className="text-emerald-500 hover:text-teal-300 hover:underline ml-1"
           >
             プライバシーポリシー
           </a>
@@ -215,7 +156,7 @@ export default function ContactForm() {
             href="https://policies.google.com/terms" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-teal-400 hover:text-teal-300 hover:underline ml-1"
+            className="text-emerald-500 hover:text-teal-300 hover:underline ml-1"
           >
             利用規約
           </a>

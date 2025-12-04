@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 export default function Navigation() {
@@ -16,16 +17,17 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 border-b border-gray-200 shadow-sm z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/">
-              <Button 
-                variant="ghost"
-                className="text-xl font-bold text-gray-900 hover:text-gray-700 p-0 h-auto font-sans"
-              >
-                Realable Inc.
-              </Button>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/services/logo.svg"
+                alt="Realable Inc."
+                width={100}
+                height={20}
+                priority
+              />
             </Link>
           </div>
 
@@ -34,8 +36,8 @@ export default function Navigation() {
             {navItems.map((item, index) => (
               <Link key={index} href={item.href}>
                 <Button
-                  variant="ghost"
-                  className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                  variant="text"
+                  className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
                 >
                   {item.label}
                 </Button>
@@ -78,7 +80,7 @@ export default function Navigation() {
                   <Button
                     variant="ghost"
                     onClick={() => setIsMenuOpen(false)}
-                    className="w-full justify-start text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50/50 rounded-lg py-3 transition-all duration-200"
+                    className="w-full justify-start text-base font-medium text-gray-700 hover:text-primary rounded-lg py-3 transition-all duration-200"
                   >
                     <span className="flex items-center gap-3">
                       {item.href === '/services' && (

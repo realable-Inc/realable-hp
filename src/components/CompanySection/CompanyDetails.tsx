@@ -2,7 +2,7 @@
 
 export default function CompanyDetails() {
   return (
-    <div className="max-w-4xl mx-auto bg-white min-h-screen">
+    <div className="max-w-4xl mx-auto bg-white">
       {/* Main Content */}
       <div className="px-8 py-12">
         <div className="space-y-0">
@@ -25,6 +25,18 @@ export default function CompanyDetails() {
           <div className="grid grid-cols-3 gap-4 py-4 border-b border-gray-200">
             <dt className="font-semibold text-gray-800 text-base">設立</dt>
             <dd className="text-gray-600 text-base col-span-2">2024年5月30日</dd>
+          </div>
+
+          {/* 資本金 */}
+          <div className="grid grid-cols-3 gap-4 py-4 border-b border-gray-200">
+            <dt className="font-semibold text-gray-800 text-base">資本金</dt>
+            <dd className="text-gray-600 text-base col-span-2">414万円</dd>
+          </div>
+
+          {/* 宅建免許番号 */}
+          <div className="grid grid-cols-3 gap-4 py-4 border-b border-gray-200">
+            <dt className="font-semibold text-gray-800 text-base">宅建免許番号</dt>
+            <dd className="text-gray-600 text-base col-span-2">東京都知事免許(01)第112050号</dd>
           </div>
 
           {/* 事業内容 */}
@@ -79,18 +91,6 @@ export default function CompanyDetails() {
               </a>
             </dd>
           </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="mt-16 text-center space-y-4 pb-8">
-        <div className="text-2xl font-bold text-gray-800">リアラブル株式会社</div>
-        <div className="text-gray-600">
-          <span>Contact: </span>
-          <a href="mailto:contact@hakoma.tokyo" className="text-orange-500 hover:underline">contact@hakoma.tokyo</a>
-        </div>
-        <div className="text-sm text-gray-500">
-          COPYRIGHT © 2024 リアラブル株式会社. ALL RIGHTS RESERVED.
         </div>
       </div>
     </div>
