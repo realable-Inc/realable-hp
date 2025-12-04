@@ -1,6 +1,7 @@
-const CONTACT_EMAIL_URL = 'https://asia-northeast1-realable-hp.cloudfunctions.net/sendContactEmail'
+import { getAppCheckToken } from '@/lib/firebase';
 
-const REPLY_EMAIL_URL = 'https://asia-northeast1-realable-hp.cloudfunctions.net/sendReplyEmail'
+const CONTACT_EMAIL_URL = 'https://asia-northeast1-realable-hp.cloudfunctions.net/sendContactEmail';
+const REPLY_EMAIL_URL = 'https://asia-northeast1-realable-hp.cloudfunctions.net/sendReplyEmail';
 
 export interface ContactFormData {
   name: string;
@@ -27,16 +28,33 @@ export interface EmailService {
  * Firebase Functions経由でメール送信を行うサービス
  */
 class FirebaseEmailService implements EmailService {
+  private async fetchWithAppCheck(
+    url: string,
+    data: object
+  ): Promise<Response> {
+    const appCheckToken = await getAppCheckToken();
+
+    const headers: HeadersInit = {
+      'Content-Type': 'application/json',
+    };
+
+    if (appCheckToken) {
+      headers['X-Firebase-AppCheck'] = appCheckToken;
+    } else {
+      console.warn('App Check token not available, request may be rejected');
+    }
+
+    return fetch(url, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(data),
+    });
+  }
+
   async sendContactForm(data: ContactFormData): Promise<EmailServiceResponse> {
     try {
       // 管理者へお問い合わせメールを送信
-      const contactResponse = await fetch(CONTACT_EMAIL_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      const contactResponse = await this.fetchWithAppCheck(CONTACT_EMAIL_URL, data);
 
       if (!contactResponse.ok) {
         throw new Error(`HTTP error! status: ${contactResponse.status}`);
@@ -46,15 +64,9 @@ class FirebaseEmailService implements EmailService {
 
       // クライアントへ確認メールを送信
       try {
-        const replyResponse = await fetch(REPLY_EMAIL_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: data.name,
-            email: data.email,
-          }),
+        const replyResponse = await this.fetchWithAppCheck(REPLY_EMAIL_URL, {
+          name: data.name,
+          email: data.email,
         });
 
         if (!replyResponse.ok) {

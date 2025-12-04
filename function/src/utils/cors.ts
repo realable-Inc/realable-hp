@@ -21,7 +21,10 @@ export function handleCors(request: Request, response: any): boolean {
   }
 
   response.set("Access-Control-Allow-Methods", "POST, OPTIONS");
-  response.set("Access-Control-Allow-Headers", "Content-Type");
+  response.set(
+    "Access-Control-Allow-Headers",
+    "Content-Type, X-Firebase-AppCheck"
+  );
 
   // OPTIONSリクエスト（preflight）の処理
   if (request.method === "OPTIONS") {

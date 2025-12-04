@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
+import { FirebaseProvider } from "@/components/FirebaseProvider";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -70,12 +71,14 @@ export default function RootLayout({
       <body
         className={`${notoSansJP.variable} font-sans antialiased`}
       >
-        <StructuredData />
-        <Navigation />
-        <main className="pt-16 min-h-screen">
-          {children}
-        </main>
-        <Footer />
+        <FirebaseProvider>
+          <StructuredData />
+          <Navigation />
+          <main className="pt-16 min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </FirebaseProvider>
       </body>
     </html>
   );

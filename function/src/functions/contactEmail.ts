@@ -3,12 +3,18 @@ import * as logger from "firebase-functions/logger";
 import {sendEmail} from "../utils/email";
 import {contactEmailOptions, EMAIL_REGEX} from "../config/functions";
 import {handleCors} from "../utils/cors";
+import {requireAppCheck} from "../utils/appCheck";
 
 export const sendContactEmail = onRequest(
   contactEmailOptions,
   async (request, response) => {
     // CORS処理
     if (handleCors(request, response)) {
+      return;
+    }
+
+    // App Check検証
+    if (await requireAppCheck(request, response)) {
       return;
     }
 
