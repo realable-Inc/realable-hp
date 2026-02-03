@@ -7,6 +7,10 @@ export interface ServiceDetail {
   };
   overview: string;
   overviewImage?: string;
+  externalLink?: {
+    url: string;
+    label: string;
+  };
   operationFlow: {
     title: string;
     steps: string[];
@@ -301,6 +305,10 @@ export const servicesData: ServiceDetail[] = [
     overview:
       "スマートREINSは、普段使う言葉で入力した希望条件をAIが解析し、REINSの検索フォームへ自動マッピングするChrome拡張です。複雑な検索項目を探して入力する手間を減らします。よく使う条件は個人単位で保存でき、自分だけのテンプレートとして活用可能。",
     overviewImage: "/images/services/smart-reins/overview.png",
+    externalLink: {
+      url: "https://chromewebstore.google.com/detail/hpbbeblhmableikikpoicaljjdihbdaa",
+      label: "Chromeに追加",
+    },
     operationFlow: {
       title: "運用フロー",
       steps: [
