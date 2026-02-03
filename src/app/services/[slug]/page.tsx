@@ -123,6 +123,14 @@ export default async function ServiceDetailPage({
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
               >
+                {/* Chrome icon */}
+                <svg
+                  className="w-6 h-6 mr-3"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 0C8.21 0 4.831 1.757 2.632 4.501l3.953 6.848A5.454 5.454 0 0 1 12 6.545h10.691A12 12 0 0 0 12 0zM1.931 5.47A11.943 11.943 0 0 0 0 12c0 6.012 4.42 10.991 10.189 11.864l3.953-6.847a5.45 5.45 0 0 1-6.865-2.29zm13.342 2.166a5.446 5.446 0 0 1 1.45 7.09l.002.001h-.002l-3.952 6.848a12.014 12.014 0 0 0 9.62-9.797H15.272zm-3.273 2.91a1.454 1.454 0 1 0 0 2.909 1.454 1.454 0 0 0 0-2.909z" />
+                </svg>
                 {service.externalLink.label}
                 <svg
                   className="w-5 h-5 ml-2"
