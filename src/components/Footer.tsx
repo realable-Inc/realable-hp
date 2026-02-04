@@ -8,8 +8,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-slate-900">宅建免許番号</h4>
-            <ul className="space-y-2"><li>{LICENSE_NUMBER}</li></ul>
+            <h4 className="text-lg font-semibold mb-2 text-slate-900">Realable株式会社</h4>
+            <p className="text-sm text-slate-500">{LICENSE_NUMBER}</p>
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4 text-slate-900">サービス</h4>
