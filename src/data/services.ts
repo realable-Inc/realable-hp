@@ -325,19 +325,19 @@ export const servicesData: ServiceDetail[] = [
         {
           title: "普段の言葉で入力するだけ",
           description:
-            "「渋谷区で1LDK、賃料20万円以下」「新宿駅徒歩10分以内、2LDK以上」など、会話のような入力でOK。「築15年以内」のような条件もAIがREINSの築年月入力に合わせて自動計算。REINSの複雑な項目を覚えたり、入力欄を探し回る必要がありません。",
+            "「渋谷区で1LDK、賃料20万円以下」「新宿駅徒歩10分以内、2LDK以上」など、会話のような入力でOK。REINSの複雑な項目を覚えたり、入力欄を探し回る必要がありません。",
           // image: "/images/services/smart-reins/feature-nl.png",
         },
         {
           title: "ワンクリックでREINSに反映",
           description:
-            "REINS画面のサイドパネルで生成→確認→適用まで完結。画面を切り替えずに、ボタン1つで検索画面に条件をセットできます。手入力のミスや条件漏れを減らし、検索に集中できます。※現在1都3県（東京都・神奈川県・千葉県・埼玉県）の賃貸物件検索に対応。",
+            "ボタン1つでREINS検索画面に条件をセットできます。手入力のミスや条件漏れを減らし、検索に集中できます。※現在1都3県（東京都・神奈川県・千葉県・埼玉県）の賃貸物件検索に対応。",
           // image: "/images/services/smart-reins/feature-apply.png",
         },
         {
           title: "検索条件の“個人保存”で、勝ち条件を資産化",
           description:
-            "REINS側でも条件保存はできますが、スマートREINSは“あなたのChromeに保存”できます。個人のテンプレを案件・顧客タイプ別に管理でき、PC環境や運用に左右されず再現性の高い検索が回せます。",
+            "REINS側でも条件保存はできますが、スマートREINSは“あなたのChromeに保存”できます。個人のテンプレを案件・顧客タイプ別に管理できます。",
           // image: "/images/services/smart-reins/feature-save.png",
         },
         {
