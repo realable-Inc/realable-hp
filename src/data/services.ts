@@ -307,7 +307,7 @@ export const servicesData: ServiceDetail[] = [
     overviewImage: "/images/services/smart-reins/overview.png",
     externalLink: {
       url: "https://chromewebstore.google.com/detail/hpbbeblhmableikikpoicaljjdihbdaa",
-      label: "Chromeに追加",
+      label: "無料でChromeに追加",
     },
     operationFlow: {
       title: "運用フロー",
@@ -323,33 +323,27 @@ export const servicesData: ServiceDetail[] = [
       title: "特徴",
       points: [
         {
-          title: "自然言語で条件指定（普段の言葉のまま）",
+          title: "普段の言葉で入力するだけ",
           description:
-            "「渋谷区で1LDK、賃料20万円以下」「新宿駅徒歩10分以内、2LDK以上」「港区か目黒区で店舗事務所、50坪以上」など、会話のような入力でOK。REINSの複雑な項目を覚えたり、入力欄を探し回る必要がありません。",
+            "「渋谷区で1LDK、賃料20万円以下」「新宿駅徒歩10分以内、2LDK以上」など、会話のような入力でOK。「築15年以内」のような条件もAIがREINSの築年月入力に合わせて自動計算。REINSの複雑な項目を覚えたり、入力欄を探し回る必要がありません。",
           // image: "/images/services/smart-reins/feature-nl.png",
         },
         {
-          title: "“面倒な条件”を自動でREINS仕様に変換",
+          title: "ワンクリックでREINSに反映",
           description:
-            "「築15年以内」のような条件も、REINSの築年月入力に合わせて自動計算して反映できます。手計算・入力ミス・条件漏れを減らし、検索品質を安定させます。",
-          // image: "/images/services/smart-reins/feature-convert.png",
-        },
-        {
-          title: "Chrome拡張でREINSにシームレス適用",
-          description:
-            "REINS画面のサイドパネルで生成→確認→適用まで完結。画面を切り替えずに、その場で条件を反映できるため、検索に集中できます。※現在1都3県（東京都・神奈川県・千葉県・埼玉県）の賃貸物件検索に対応。",
+            "REINS画面のサイドパネルで生成→確認→適用まで完結。画面を切り替えずに、ボタン1つで検索画面に条件をセットできます。手入力のミスや条件漏れを減らし、検索に集中できます。※現在1都3県（東京都・神奈川県・千葉県・埼玉県）の賃貸物件検索に対応。",
           // image: "/images/services/smart-reins/feature-apply.png",
         },
         {
           title: "検索条件の“個人保存”で、勝ち条件を資産化",
           description:
-            "REINS側でも条件保存はできますが、スマートREINSは“あなたのChromeに保存”できるのが強み。個人のテンプレを案件・顧客タイプ別に管理でき、PC環境や運用に左右されず再現性の高い検索が回せます。",
+            "REINS側でも条件保存はできますが、スマートREINSは“あなたのChromeに保存”できます。個人のテンプレを案件・顧客タイプ別に管理でき、PC環境や運用に左右されず再現性の高い検索が回せます。",
           // image: "/images/services/smart-reins/feature-save.png",
         },
         {
           title: "物件詳細画像のダウンロード",
           description:
-            "物件詳細ページで画像のダウンロードボタンを表示し、クリックで保存できます。提案時に画像も合わせて共有しやすくなります。",
+            "物件詳細ページで画像のダウンロードボタンを表示し、クリックで保存できます。",
           // image: "/images/services/smart-reins/feature-download.png",
         },
       ],
