@@ -134,6 +134,25 @@ npm run build
 
 ## デプロイ方法
 
+### 自動デプロイ（GitHub Actions）
+
+GitHub Actions により、以下のトリガーで自動デプロイされます。
+
+```
+PR作成 ──→ プレビューデプロイ ──→ レビュー・確認
+                │
+                ▼
+            PRにプレビューURL
+            がコメントされる
+
+マージ ──→ 本番デプロイ ──→ https://realable.tokyo
+```
+
+| トリガー | デプロイ先 | URL |
+|:-------:|:--------:|:---:|
+| PR 作成・更新 | プレビュー環境 | `https://realable-hp--pr{N}-xxxxx.web.app` |
+| main へマージ | 本番環境 | `https://realable.tokyo` |
+
 ### 前提条件
 - Firebase CLIのインストール: `npm install -g firebase-tools`
 - Firebaseプロジェクト: `realable-hp`
