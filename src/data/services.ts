@@ -7,6 +7,10 @@ export interface ServiceDetail {
   };
   overview: string;
   overviewImage?: string;
+  externalLink?: {
+    url: string;
+    label: string;
+  };
   operationFlow: {
     title: string;
     steps: string[];
@@ -282,6 +286,64 @@ export const servicesData: ServiceDetail[] = [
           title: "生成AIが内容を理解し欲しい回答を即座に生成",
           description:
             "ただ社内文書を検索するだけではなく、AIが質問の意図と社内文書の内容を理解して、あなたの欲しい回答を即座に生成します。",
+        },
+      ],
+    },
+  },
+  {
+    id: "reins-search-copilot",
+    title: "REINS検索コパイロット",
+    description: {
+      title:
+        "自然文で入力するだけ。AIがREINS検索条件を自動生成し、ワンクリックで画面に適用。",
+      points: [
+        "自然文→REINS検索条件へ自動変換（駅徒歩・賃料・間取り・築年など）",
+        "Chrome拡張でREINS画面に直接反映。入力作業とミスを大幅削減",
+        "検索条件を“個人単位”で保存・再利用（REINS側の保存条件に依存しない）",
+      ],
+    },
+    overview:
+      "REINS検索コパイロットは、普段使う言葉で入力した希望条件をAIが解析し、REINSの検索フォームへ自動入力するChrome拡張です。複雑な検索項目を探して入力する手間を減らします。よく使う条件は個人単位で保存でき、自分だけのテンプレートとして活用可能。",
+    overviewImage: "/images/services/smart-reins/overview.png",
+    externalLink: {
+      url: "https://chromewebstore.google.com/detail/hpbbeblhmableikikpoicaljjdihbdaa",
+      label: "無料でChromeに追加",
+    },
+    operationFlow: {
+      title: "運用フロー",
+      steps: [
+        "【インストール】Chrome拡張を追加し、REINSにログイン",
+        "【条件入力】サイドパネルに自然言語で入力（例：「渋谷駅徒歩10分以内、賃料20万以下、1LDK以上」）",
+        "【AI変換】AIが条件を解析し、REINSの検索項目へ自動入力",
+        "【適用】ワンクリックでREINS検索画面に自動入力→検索実行",
+      ],
+    },
+    features: {
+      title: "特徴",
+      points: [
+        {
+          title: "普段の言葉で入力するだけ",
+          description:
+            "「渋谷区で1LDK、賃料20万円以下」「新宿駅徒歩10分以内、2LDK以上」など、会話のような入力でOK。REINSの複雑な項目を覚えたり、入力欄を探し回る必要がありません。",
+          // image: "/images/services/smart-reins/feature-nl.png",
+        },
+        {
+          title: "ワンクリックでREINSに反映",
+          description:
+            "ボタン1つでREINS検索画面に条件をセットできます。検索時間削減。※現在1都3県（東京都・神奈川県・千葉県・埼玉県）の賃貸物件検索に対応。",
+          // image: "/images/services/smart-reins/feature-apply.png",
+        },
+        {
+          title: "検索条件の“個人保存”で、勝ち条件を資産化",
+          description:
+            "REINS側でも条件保存はできますが、REINS検索コパイロットは“あなたのChromeに保存”できます。個人のテンプレを案件・顧客タイプ別に管理できます。",
+          // image: "/images/services/smart-reins/feature-save.png",
+        },
+        {
+          title: "物件詳細画像のダウンロード",
+          description:
+            "物件詳細ページで画像のダウンロードボタンを表示し、クリックで保存できます。通常REINSでは画像のダウンロードができないため、この機能により画像の保存が簡単になります。",
+          // image: "/images/services/smart-reins/feature-download.png",
         },
       ],
     },

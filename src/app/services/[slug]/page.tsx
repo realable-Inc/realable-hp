@@ -113,6 +113,39 @@ export default async function ServiceDetailPage({
               </div>
             </div>
           )}
+
+          {/* 外部リンクボタン */}
+          {service.externalLink && (
+            <div className="text-center mt-12">
+              <a
+                href={service.externalLink.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+              >
+                {/* Chrome icon */}
+                <img
+                  src="/images/icons/chrome.svg"
+                  alt="Chrome"
+                  className="w-6 h-6 mr-3"
+                />
+                {service.externalLink.label}
+                <svg
+                  className="w-5 h-5 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </div>
+          )}
         </div>
       </section>
 
@@ -193,6 +226,39 @@ export default async function ServiceDetailPage({
                 </div>
               ))}
             </div>
+
+            {/* 外部リンクボタン（特徴セクション下部） */}
+            {service.externalLink && (
+              <div className="text-center mt-16">
+                <a
+                  href={service.externalLink.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-lg font-medium text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+                >
+                  {/* Chrome icon */}
+                  <img
+                    src="/images/icons/chrome.svg"
+                    alt="Chrome"
+                    className="w-6 h-6 mr-3"
+                  />
+                  {service.externalLink.label}
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </section>
