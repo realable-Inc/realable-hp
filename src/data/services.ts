@@ -292,7 +292,7 @@ export const servicesData: ServiceDetail[] = [
   },
   {
     id: "reins-search-copilot",
-    title: "REINS検索コパイロット",
+    title: "REINS検索コパイロット(β版)",
     description: {
       title:
         "自然文で入力するだけ。AIがREINS検索条件を自動生成し、ワンクリックで画面に適用。",
