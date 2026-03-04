@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -80,6 +81,7 @@ export default function RootLayout({
           <Footer />
         </FirebaseProvider>
       </body>
+      <GoogleAnalytics gaId="G-NWH76LWYTF" />
     </html>
   );
 }

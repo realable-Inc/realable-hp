@@ -12,6 +12,7 @@
     "deploy:all": "npm run deploy:hosting && npm run deploy:functions"
   },
   "dependencies": {
+    "@next/third-parties": "^16.1.6",
     "biome": "^0.2.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
