@@ -28,9 +28,9 @@ export const newsData: NewsItem[] = [
     id: "1",
     date: "2026.2.5",
     category: "release",
-    title: "REINS検索をAIで効率化する新ツール「REINS検索コパイロット」をβ版としてリリースしました",
+    title: "REINS検索をAIで効率化する新ツール「Hakoma物件探しコパイロット」をβ版としてリリースしました",
     link: {
-      url: "/services/reins-search-copilot",
+      url: "/services/hakoma-search-copilot",
       isExternal: false,
     },
   },
