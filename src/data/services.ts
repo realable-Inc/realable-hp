@@ -291,8 +291,8 @@ export const servicesData: ServiceDetail[] = [
     },
   },
   {
-    id: "reins-search-copilot",
-    title: "REINS検索コパイロット(β版)",
+    id: "hakoma-search-copilot",
+    title: "Hakoma物件探しコパイロット(β版)",
     description: {
       title:
         "自然文で入力するだけ。AIがREINS検索条件を自動生成し、ワンクリックで画面に適用。",
@@ -303,7 +303,7 @@ export const servicesData: ServiceDetail[] = [
       ],
     },
     overview:
-      "REINS検索コパイロットは、普段使う言葉で入力した希望条件をAIが解析し、REINSの検索フォームへ自動入力するChrome拡張です。複雑な検索項目を探して入力する手間を減らします。よく使う条件は個人単位で保存でき、自分だけのテンプレートとして活用可能。",
+      "Hakoma物件探しコパイロットは、普段使う言葉で入力した希望条件をAIが解析し、REINSの検索フォームへ自動入力するChrome拡張です。複雑な検索項目を探して入力する手間を減らします。よく使う条件は個人単位で保存でき、自分だけのテンプレートとして活用可能。",
     overviewImage: "/images/services/smart-reins/overview.png",
     externalLink: {
       url: "https://chromewebstore.google.com/detail/hpbbeblhmableikikpoicaljjdihbdaa",
@@ -336,7 +336,7 @@ export const servicesData: ServiceDetail[] = [
         {
           title: "検索条件の“個人保存”で、勝ち条件を資産化",
           description:
-            "REINS側でも条件保存はできますが、REINS検索コパイロットは“あなたのChromeに保存”できます。個人のテンプレを案件・顧客タイプ別に管理できます。",
+            "REINS側でも条件保存はできますが、Hakoma物件探しコパイロットは“あなたのChromeに保存”できます。個人のテンプレを案件・顧客タイプ別に管理できます。",
           // image: "/images/services/smart-reins/feature-save.png",
         },
         {
