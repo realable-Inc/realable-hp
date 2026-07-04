@@ -185,22 +185,23 @@ export default async function ServiceDetailPage({
       {/* 特徴セクション */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="container max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
                 {service.features.title}
               </h2>
             </div>
 
-            <div className="space-y-16">
+            <div className="space-y-24">
               {service.features.points.map((feature, index) => (
                 <div
                   key={index}
-                  className={
+                  id={feature.anchorId}
+                  className={`scroll-mt-24 ${
                     feature.image
-                      ? "grid lg:grid-cols-2 gap-8 items-start"
+                      ? "grid lg:grid-cols-2 gap-8 items-center"
                       : "flex justify-center"
-                  }
+                  }`}
                 >
                   <div
                     className={
@@ -215,12 +216,46 @@ export default async function ServiceDetailPage({
                     </p>
                   </div>
                   {feature.image && (
-                    <div className="flex justify-center lg:justify-end">
+                    <div
+                      className={`flex justify-center ${
+                        index % 2 === 1
+                          ? "lg:justify-start lg:order-first"
+                          : "lg:justify-end"
+                      }`}
+                    >
                       <img
                         src={feature.image}
                         alt={feature.title}
-                        className="w-full max-w-md h-auto rounded-2xl shadow-xl"
+                        className="w-full aspect-video object-cover object-top rounded-2xl shadow-xl"
+                        style={
+                          feature.imagePosition
+                            ? { objectPosition: feature.imagePosition }
+                            : undefined
+                        }
                       />
+                    </div>
+                  )}
+                  {feature.gallery && (
+                    <div className="mt-4 grid sm:grid-cols-3 gap-6 lg:col-span-2 lg:order-last">
+                      {feature.gallery.map((item, galleryIndex) => (
+                        <figure key={galleryIndex} className="text-center">
+                          <img
+                            src={item.image}
+                            alt={item.caption ?? feature.title}
+                            className="w-full aspect-video object-cover object-top rounded-xl shadow-md"
+                            style={
+                              item.imagePosition
+                                ? { objectPosition: item.imagePosition }
+                                : undefined
+                            }
+                          />
+                          {item.caption && (
+                            <figcaption className="mt-2 text-sm text-slate-500">
+                              {item.caption}
+                            </figcaption>
+                          )}
+                        </figure>
+                      ))}
                     </div>
                   )}
                 </div>

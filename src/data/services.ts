@@ -21,6 +21,16 @@ export interface ServiceDetail {
       title: string;
       description: string;
       image?: string;
+      /** 16:9クロップ時の基準位置（CSS object-position。既定は "top"） */
+      imagePosition?: string;
+      /** 特徴の下に横並びで表示するギャラリー画像（対応サイト一覧など） */
+      gallery?: {
+        image: string;
+        caption?: string;
+        imagePosition?: string;
+      }[];
+      /** ニュース等からのアンカーリンク用ID（例: /services/xxx#anchor-id） */
+      anchorId?: string;
     }[];
   };
 }
@@ -325,25 +335,63 @@ export const servicesData: ServiceDetail[] = [
           title: "普段の言葉で入力するだけ",
           description:
             "「渋谷区で1LDK、賃料20万円以下」「新宿駅徒歩10分以内、2LDK以上」など、会話のような入力でOK。REINSの複雑な項目を覚えたり、入力欄を探し回る必要がありません。",
-          // image: "/images/services/smart-reins/feature-nl.png",
+          image: "/images/services/smart-reins/type_own_word.webp",
         },
         {
           title: "ワンクリックでREINSに反映",
           description:
             "ボタン1つでREINS検索画面に条件をセットできます。検索時間削減。※現在1都3県（東京都・神奈川県・千葉県・埼玉県）の賃貸物件検索に対応。",
-          // image: "/images/services/smart-reins/feature-apply.png",
+          image: "/images/services/smart-reins/one_click.webp",
         },
         {
           title: "検索条件の“個人保存”で、勝ち条件を資産化",
           description:
             "REINS側でも条件保存はできますが、Hakoma物件探しコパイロットは“あなたのChromeに保存”できます。個人のテンプレを案件・顧客タイプ別に管理できます。",
-          // image: "/images/services/smart-reins/feature-save.png",
+          image: "/images/services/smart-reins/save_condition.webp",
         },
         {
           title: "物件詳細画像のダウンロード",
           description:
             "物件詳細ページで画像のダウンロードボタンを表示し、クリックで保存できます。通常REINSでは画像のダウンロードができないため、この機能により画像の保存が簡単になります。",
-          // image: "/images/services/smart-reins/feature-download.png",
+          image: "/images/services/smart-reins/reins_image_download.png",
+        },
+        {
+          title: "ポータルサイトからワンクリックでREINS検索",
+          description:
+            "at home・SUUMO・LIFULL HOME'Sの賃貸物件詳細ページに「REINSで検索」ボタンを表示。ワンクリックで新規タブにREINSを立ち上げ、物件種別・物件所在地・建物使用部分面積・築年月を自動入力します。REINS検索時の入力作業を省略し、スムーズに物件確認を行えます。",
+          image: "/images/services/smart-reins/after_click.webp",
+          gallery: [
+            {
+              image: "/images/services/smart-reins/at_home.webp",
+              caption: "at home",
+              imagePosition: "left bottom",
+            },
+            {
+              image: "/images/services/smart-reins/suumo.webp",
+              caption: "SUUMO",
+              imagePosition: "left bottom",
+            },
+            {
+              image: "/images/services/smart-reins/liful_homes.webp",
+              caption: "LIFULL HOME'S",
+              imagePosition: "left bottom",
+            },
+          ],
+          anchorId: "portal-reins-search",
+        },
+        {
+          title: "物件の閲覧状況を色分け表示",
+          description:
+            "REINSの検索結果に表示される物件を閲覧状況に応じて色分け表示（未閲覧：赤色／詳細閲覧済み：黄色／表示済み：白色）。どの物件を確認済みかが一目で分かるため、同じ物件を何度も開いてしまう無駄を防ぎ、未確認物件を優先的に確認できます。",
+          image: "/images/services/smart-reins/view_status_by_color.webp",
+          anchorId: "view-status-by-color",
+        },
+        {
+          title: "定期的な自動検索とメール通知",
+          description:
+            "保存した検索条件でREINS検索を定期的に自動実行し、検索結果をCSVにまとめてメールでお届け。毎日同じ条件で検索し直す作業をなくし、新着物件の見逃しを防ぎます。検索条件ごとにON/OFFをワンタップで切り替えられます。※利用にはアカウント登録が必要です。",
+          // image: "/images/services/smart-reins/feature-schedule.png",
+          anchorId: "scheduled-search-notification",
         },
       ],
     },
