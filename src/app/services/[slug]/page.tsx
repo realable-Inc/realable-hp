@@ -200,7 +200,7 @@ export default async function ServiceDetailPage({
                   className={`scroll-mt-24 ${
                     feature.image
                       ? "grid lg:grid-cols-2 gap-8 items-center"
-                      : "flex justify-center"
+                      : "flex flex-col items-center"
                   }`}
                 >
                   <div
