@@ -358,7 +358,7 @@ export const servicesData: ServiceDetail[] = [
         {
           title: "ポータルサイトからワンクリックでREINS検索",
           description:
-            "at home・SUUMO・LIFULL HOME'Sの賃貸物件詳細ページに「REINSで検索」ボタンを表示。ワンクリックで新規タブにREINSを立ち上げ、物件種別・物件所在地・建物使用部分面積・築年月を自動入力します。REINS検索時の入力作業を省略し、スムーズに物件確認を行えます。",
+            "at home・SUUMO・LIFULL HOME'Sの物件詳細ページに「REINSで検索」ボタンを表示。ワンクリックで新規タブにREINSを立ち上げ、物件種別・物件所在地・建物使用部分面積・築年月を自動入力します。REINS検索時の入力作業を省略し、スムーズに物件確認を行えます。",
           image: "/images/services/smart-reins/after_click.webp",
           gallery: [
             {
