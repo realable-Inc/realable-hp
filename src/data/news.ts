@@ -26,8 +26,7 @@ export const categoryColors: Record<NewsItem["category"], string> = {
 export const newsData: NewsItem[] = [
   {
     id: "3",
-    // TODO: 定期自動検索・通知機能のリリース日確定後に日付を更新する
-    date: "2026.X.X",
+    date: "2026.7.14",
     category: "release",
     title:
       "「Hakoma物件探しコパイロット」に保存した検索条件の定期自動検索とメール通知機能を追加しました",
