@@ -302,7 +302,7 @@ export const servicesData: ServiceDetail[] = [
   },
   {
     id: "hakoma-search-copilot",
-    title: "Hakoma物件探しコパイロット(β版)",
+    title: "Hakoma物件探しコパイロット",
     description: {
       title:
         "自然文で入力するだけ。AIがREINS検索条件を自動生成し、ワンクリックで画面に適用。",
