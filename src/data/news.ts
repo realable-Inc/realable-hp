@@ -25,6 +25,28 @@ export const categoryColors: Record<NewsItem["category"], string> = {
 
 export const newsData: NewsItem[] = [
   {
+    id: "3",
+    date: "2026.7.14",
+    category: "release",
+    title:
+      "「Hakoma物件探しコパイロット」に保存した検索条件の定期自動検索とメール通知機能を追加しました",
+    link: {
+      url: "/services/hakoma-search-copilot#scheduled-search-notification",
+      isExternal: false,
+    },
+  },
+  {
+    id: "2",
+    date: "2026.6.25",
+    category: "release",
+    title:
+      "「Hakoma物件探しコパイロット」に賃貸物件ページからワンクリックでREINS検索できる新機能を追加しました",
+    link: {
+      url: "/services/hakoma-search-copilot#portal-reins-search",
+      isExternal: false,
+    },
+  },
+  {
     id: "1",
     date: "2026.2.5",
     category: "release",
